@@ -48,9 +48,23 @@ A maior parte do sistema é escrita na linguagem “Go”, essa linguagem foi cr
 
 Apesar da linguagem Go não oferecer vários recursos considerados necessários para orientação a objetos, ela possui algumas características que a caracterizam nesse paradigma:
 - *Estruturas*: Go não possui classes ou métodos mas possui Estruturas. Estruturas são tipos definidos pelo usuário, que podem conter métodos (se assemelhando a uma classe).
-- *Métodos*: Os métodos em Go são funções que operam em tipos (Estruturas) específicos.
+![Estruturas](
+  https://raw.githubusercontent.com/licesoares/docArquitetura-Kubernetes/master/img/Estruturas.PNG)
+  
+Fonte: Arquivo healthcheck.go do pacote Proxy Kubernetes.
+
+- *Métodos*: Os métodos em Go são funções que operam em tipos (Estruturas) específicos. 
+
+![Metodos](
+  https://raw.githubusercontent.com/licesoares/docArquitetura-Kubernetes/master/img/Metodos.PNG)
+  
+Fonte: Arquivo healthcheck.go do pacote Proxy Kubernetes.
 - *Interfaces*: Interfaces em Go são tipos que declaram um conjunto de métodos, que assim como em outras linguagens, não possuem implementação. Objetos que implementam todos os métodos de uma interface, 'herdam' essa interface (de forma um pouco diferente, uma vez que Go não possui herança).
 - *Encapsulamento*: Go encapsula coisas à nível de pacote. Nomes que começam com letra minúscula são visíveis apenas dentro do pacote.
+![encapsulamento](
+  https://raw.githubusercontent.com/licesoares/docArquitetura-Kubernetes/master/img/encapsulamento.PNG)
+  
+Fonte: Arquivo healthcheck.go do pacote Proxy Kubernetes.
 
 Em bem menor escala, as linguagens Shell, Makefile , Protocol Buffer, YAML, HTML, Markdown e Python também são utilizadas na aplicação.
 
