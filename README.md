@@ -128,4 +128,12 @@ Segue abaixo a visão de desenvolvimento do Kubernetes com todos os seus pacotes
 - *Version*: Pacote que contém informações da versão a ser gerada, informações gerais da última configuração de build para geração de nova versão.
 - *Volume*: Armazena todo código referente a Volumes no Kubernetes, incluindo representações internas e código de montagem e desmontagem de volumes.
 
+#### Visão Física
+
+Referências
+-----------
+
+https://kubernetes.io/
+https://github.com/kubernetes
+
 
