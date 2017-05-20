@@ -84,4 +84,48 @@ Outras diversas ferramentas podem ser utilizadas, ligadas principalmente à gere
 Arquitetura
 --------------------
 
+#### Visão de Processo
+
+Segue abaixo a visão de Processo do Kubernetes e a descrição de cada componente.
+ ![visao-processo](
+  https://raw.githubusercontent.com/licesoares/docArquitetura-Kubernetes/master/img/visao-processo.PNG)
+
+#### Componentes
+Nó Master: Responsável por gerenciar o cluster do Kubernetes , sendo o ponto de entrada de todas as tarefas que são executadas. Sendo assim, o nó master cuida de orquestrar os nós de trabalho que estão sendo executados. Os principais componentes, são:
+- *API Server*: Explicado no tópico 2.1.
+- *Etct (Cluster state store)*: Trata do armazenamento do estado do cluster, apoiando operações de alteração de configurações e em objetos do cluster.
+- *Scheduler*: O Scheduller gerencia a alocação de hosts e recursos para cada container. Após a criação de um Pod, por meio da API, o Scheduller verifica os recursos requisitados no Pod e o aloca à uma unidade do cluster.
+- *Controller Manager*: A maioria das funções básicas à nível de cluster são executadas pelo Controller Manager. Ele executa funções relacionadas a coleta de lixo nos Pods, ciclo de vida de aplicações, escalonamento de recursos, roteamento, vinculação de serviços e provisionamento.
+
+Nó de trabalho: Os pods são executados neste nó onde contém todos os serviços necessários para gerenciar a rede entre os contêineres, comunicando com o nó mestre e atribuindo recursos aos contêineres. Os principais componentes são:
+- *Kubelet*: Controlador da API dos Pods e Nós controlando toda a execução no container.
+- *Container Runtime*: Cada nó executa um tempo de execução de container, ou seja, o Kubelet desconhece o tempo de execução do sistema recipiente. Isso ocorre para manter os limites dos containers claros, facilitando testes e ligações entre as aplicações.
+- *Kube Proxy*: Solução para agrupamento de Pods com balanceamento de carga. Cada nó executa um kube-proxy que intercepta as chamadas de IP’s direcionando aos endereços corretos, equilibrando o tráfego entre clientes de um mesmo nó.
+
+#### Visão de desenvolvimento
+Segue abaixo a visão de desenvolvimento do Kubernetes com todos os seus pacotes. Devido ao grande número de classes existentes no código, elas não foram mapeadas nesta representação. 
+
+![visao-desenvolvimento](
+  https://raw.githubusercontent.com/licesoares/docArquitetura-Kubernetes/master/img/visao-desenvolvimento.PNG)
+  
+- *API*: Pacote que contém o código da representação dos objetos Kubernetes em memória.
+- *Capabilities*: Código de gerenciamento de recursos à nível de sistema.
+- *CloudProvider*: Fornece interfaces e implementações para provedores de serviços na nuvem.
+- *Controller*: Código de controladores do sistema.
+- *CredentialProvider*: Provê interfaces e implementações para esquema de autenticação de softwares de terceiros em um container.
+- *FiedPath*: Fornece métodos para extrair atributos/campos de objetos dado um determinado caminho.
+- *Generated*: Pacote para armazenamento de arquivos gerados automaticamente durante o build completo do sistema.
+- *KubeApiServer*: Pacote que armazena código comum da API Server, que não deve ser utilizado como código genérico da API.
+- *KubeCtl*: Bibliotecas usadas para manipulação de ferramentas na linha de comando kubeclt.
+- *KubeLet*: Contém código responsável pelo gerenciamento de Pod à nível de Nó, que é executado em cada Nó de trabalho.
+- *Master*: Este pacote é responsável por todo o código de configuração de execução do Nó Master, explicado na seção 3.1.
+- *Probe*: Código de utilitários para verificação da utilização de recursos das aplicações no Nó.
+- *Proxy*: Implementação do proxy de rede para comunicação transparente dos containers.
+- *Registry*: Implementação do armazenamento e lógica do sistema da API Server.
+- *Routes*: Pacote com uma coleção de rotas de tramitação http de pacotes.
+- *Security*: Implementação de requisitos de segurança da api.
+- *Util*: Implementação de métodos úteis que podem ser usados em qualquer outro pacote, este pacote, no entanto, não depende de nenhum pacote.
+- *Version*: Pacote que contém informações da versão a ser gerada, informações gerais da última configuração de build para geração de nova versão.
+- *Volume*: Armazena todo código referente a Volumes no Kubernetes, incluindo representações internas e código de montagem e desmontagem de volumes.
+
 
