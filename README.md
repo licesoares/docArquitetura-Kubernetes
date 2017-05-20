@@ -36,7 +36,22 @@ O Kubernetes satisfaz diversas necessidades comuns de aplicações:
 Kubernetes é de código aberto, está disponível no GitHub no link https://github.com/kubernetes/kubernetes e possui extensa documentação que pode ser acessada no link https://kubernetes.io/. Essa disponibilidade e documentação permite que os usuários vejam como toda a programação funciona, bem como os incentiva a criar novas funcionalidades ou melhorias que os ajudem em seus cenários. O sistema não limita os tipos de aplicativos suportados, não fornece middleware, estrutura de processamento de dados, bases de dados ou sistemas de armazenamento em cluster, apesar disso, é capaz de executar todos estes aplicativos.
 
 #### Linguagem de programação utilizadas
-A maior parte do sistema é escrita na linguagem “Go”, essa linguagem foi criada pela Google, e é de código livre desde 2009. A linguagem em questão tem sintaxe parecida com C e é uma linguagem do tipo Compilada, tem foco em eficiência e seu ponto forte é a programação concorrente. 
+A maior parte do sistema é escrita na linguagem “Go”, essa linguagem foi criada pela Google, e é de código livre desde 2009. A linguagem em questão tem o objetivo de acelerar o desenvolvimento e manutenção de programas complexos. Seguem algumas de suas características:
+- *Programação concorrente/paralela nativa*: Não são usadas bibliotecas ou extensões para prover essas funcionalidades.
+- *Desempenho*: Baseada na linguagem C, Go tem foco em desempenho sendo altamente otimizado.
+- *Multiplataforma*: Linguagem possui suporte para Linux, Windows, MAC OS, FreeBSD e mobile.
+- *Escalável*: Permite escalabilidade de forma quase transparente ao programador.
+- *Compilado*: Linguagem do tipo Compilada que utiliza os compiladores gc e gccgo.
+- *Garbage Collector nativo*: Incorporação de funcionalidade de linguagens de alto nível, de forma que o programador não precise se preocupar em limpar a memória utilizada.
+- *Memory Safe*: Go possui gestão de memória e threads de forma transparente ao programador, fazendo a gestão automática evitanto problemas de alocação e invasão de memória.
+- *Simples*: Com o foco em velocidade, vários recursos de linguagens de alto nível não estão presentes em Go, como Classes, Heranças, Overloads, Hierarquia de Tipos, Exceções e Ternários.
+
+Apesar da linguagem Go não oferecer vários recursos considerados necessários para orientação a objetos, ela possui algumas características que a caracterizam nesse paradigma:
+- *Estruturas*: Go não possui classes ou métodos mas possui Estruturas. Estruturas são tipos definidos pelo usuário, que podem conter métodos (se assemelhando a uma classe).
+- *Métodos*: Os métodos em Go são funções que operam em tipos (Estruturas) específicos.
+- *Interfaces*: Interfaces em Go são tipos que declaram um conjunto de métodos, que assim como em outras linguagens, não possuem implementação. Objetos que implementam todos os métodos de uma interface, 'herdam' essa interface (de forma um pouco diferente, uma vez que Go não possui herança).
+- *Encapsulamento*: Go encapsula coisas à nível de pacote. Nomes que começam com letra minúscula são visíveis apenas dentro do pacote.
+
 Em bem menor escala, as linguagens Shell, Makefile , Protocol Buffer, YAML, HTML, Markdown e Python também são utilizadas na aplicação.
 
 #### Equipe de desenvolvimento
@@ -137,5 +152,7 @@ Referências
 
 - https://kubernetes.io/
 - https://github.com/kubernetes
+- https://imasters.com.br/linguagens/trabalhando-com-go-golang-a-linguagem-do-google/
+- https://code.tutsplus.com/pt/tutorials/lets-go-object-oriented-programming-in-golang--cms-26540
 
 
