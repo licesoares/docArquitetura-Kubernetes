@@ -34,10 +34,14 @@ O Kubernetes satisfaz diversas necessidades comuns de aplicações:
 - *Logging* : O Kubernetes permite logs das aplicações recipientes.
 - *Segurança* : Níveis de autorização e autenticação para acesso às aplicações.
 
-
+Kubernetes é de código aberto, está disponível no GitHub no link https://github.com/kubernetes/kubernetes e possui extensa documentação que pode ser acessada no link https://kubernetes.io/. Essa disponibilidade e documentação permite que os usuários vejam como toda a programação funciona, bem como os incentiva a criar novas funcionalidades ou melhorias que os ajudem em seus cenários. O sistema não limita os tipos de aplicativos suportados, não fornece middleware, estrutura de processamento de dados, bases de dados ou sistemas de armazenamento em cluster, apesar disso, é capaz de executar todos estes aplicativos.
 
 #### Linguagem de programação utilizadas
+A maior parte do sistema é escrita na linguagem “Go”, essa linguagem foi criada pela Google, e é de código livre desde 2009. A linguagem em questão tem sintaxe parecida com C e é uma linguagem do tipo Compilada, tem foco em eficiência e seu ponto forte é a programação concorrente. 
+Em bem menor escala, as linguagens Shell, Makefile , Protocol Buffer, YAML, HTML, Markdown e Python também são utilizadas na aplicação.
 
 #### Equipe de desenvolvimento
+O Kubernetes é um sistema popular no GitHub, atualmente com 23.010 estrelas e 8.115 forks (11/05/2017), com 1.187 desenvolvedores ao redor do mundo. Para mostrar a evolução do desenvolvimento segue abaixo o gráfico de submissão de código de maio de 2015 até hoje:
+
 
 #### Evolução do sistema
