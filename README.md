@@ -168,10 +168,15 @@ Segue abaixo a visão de desenvolvimento do Kubernetes com todos os seus pacotes
 
 #### Visão Física
 
+Um dos componentes do Kubenetes é o Service que é um serviço que funciona como balanceador de carga básico para algum grupo de containers. Por exemplo, os containers de backend que são criados por meio ReplicationController necessitam de um ponto único de acesso e é justamente isso que o service pode proporcionar:
+
 Referências
 -----------
 
 - https://kubernetes.io/
 - https://github.com/kubernetes
 - https://tour.golang.org
+- https://infoslack.com/devops/introducao-ao-kubernetes
+- http://fajlinux.com.br/devops/docker-cluster-com-o-kubernetes/
+- http://www.tothenew.com/blog/understanding-kubernetes-architecture-and-setting-up-a-cluster-on-ubuntu/
 
