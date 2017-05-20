@@ -1,6 +1,6 @@
 # Documentação Arquitetural do Sistema Kubenetes
 
-**Alunos:** Alice Soares, Luisa Helena, Maxmillian
+**Alunos:** Alice Soares, Luisa Cunha e Maxmillian Araújo
 
 **Professor:** Marco Túlio de Oliveira Valente
 
@@ -43,7 +43,8 @@ Em bem menor escala, as linguagens Shell, Makefile , Protocol Buffer, YAML, HTML
 O Kubernetes é um sistema popular no GitHub, atualmente com 23.010 estrelas e 8.115 forks (11/05/2017), com 1.187 desenvolvedores ao redor do mundo. Para mostrar a evolução do desenvolvimento segue abaixo o gráfico de submissão de código de maio de 2015 até hoje:  
   ![grafic-commit](
   https://raw.githubusercontent.com/licesoares/docArquitetura-Kubernetes/master/img/grafic-commit.PNG)
-   			  Fonte:  https://github.com/kubernetes/kubernetes/graphs/commit-activity
+   			  
+Fonte:  https://github.com/kubernetes/kubernetes/graphs/commit-activity
 
 Os principais contribuintes do sistema são Clayton Coleman, arquiteto e engenheiro de Software do Kubernetes, com 994 commits e o Brendan Burns, com 993 commits na aplicação. Outros vários desenvolvedores têm destaque na página com diversos commits e contribuições relevantes no código. 
 Para guiar o desenvolvimento existem documentos sobre formas corretas de commits, bem como boas práticas de escrita de código, como pensar em nomes de variáveis e métodos, além de estruturas padrão de métodos, laços e etc.. Todo o desenvolvimento é passado por uma revisão de código antes de estar integrado a próxima release da ferramenta.
@@ -78,6 +79,7 @@ O Kubernetes utiliza/pode utilizar diversas ferramentas para facilitar a utiliza
 - *Canonical Distribution*: Ferramenta que possibilita a operação de clusters no Kubernets sob demanda, ou seja, geração de recurso para os containers de acordo com a necessidade do usuário.
 - *Crunchy PostgreSQL Container Suite*: Conjunto de ferramentas para auxiliar na manutenção dos microserviços do PostgresSQL nos containers do Kubernets.
 - *DataDog*: Ferramenta de monitoramento de serviços de infraestrutura, possibilitando alertas e análises de utilização de recursos.
+
 Outras diversas ferramentas podem ser utilizadas, ligadas principalmente à gerenciamento de recursos, rede, build e segurança e estão disponíveis na página https://kubernetes.io/partners/. 
 
 
