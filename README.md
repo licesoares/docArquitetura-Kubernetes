@@ -45,6 +45,22 @@ O Kubernetes é um sistema popular no GitHub, atualmente com 23.010 estrelas e 8
   https://raw.githubusercontent.com/licesoares/docArquitetura-Kubernetes/master/img/grafic-commit.PNG)
    			  Fonte:  https://github.com/kubernetes/kubernetes/graphs/commit-activity
 
-
+Os principais contribuintes do sistema são Clayton Coleman, arquiteto e engenheiro de Software do Kubernetes, com 994 commits e o Brendan Burns, com 993 commits na aplicação. Outros vários desenvolvedores têm destaque na página com diversos commits e contribuições relevantes no código. 
+Para guiar o desenvolvimento existem documentos sobre formas corretas de commits, bem como boas práticas de escrita de código, como pensar em nomes de variáveis e métodos, além de estruturas padrão de métodos, laços e etc.. Todo o desenvolvimento é passado por uma revisão de código antes de estar integrado a próxima release da ferramenta.
+Apesar do Kubernetes tratar-se de um sistema de código aberto, o desenvolvimento de plugins ou outras ferramentas dessa natureza requer autorizações especiais.
 
 #### Evolução do sistema
+Até hoje (12/05) o sistema teve liberação de 242 releases, a última versão liberada foi a v1.6.3, no dia 10/05/2017. Para cada versão existe a documentação de todas as modificações realizadas, bem como um link para o commit e revisão de código da correção/melhoria com uma descrição mais detalhada da alteração.
+
+#### Vocabulário específico
+
+- *Cluster*: Arquitetura de sistema capaz de combinar vários computadores para trabalharem em conjunto, sendo cada estação um nodo de uma rede formada pelo conjunto de computadores. No contexto de máquinas virtuais e containers, o nodo da rede pode ser cada container ou máquina virtual.
+- *Minions*: É o nome dado para cada host do cluster.
+- *Kubelet*: Agente que roda nos hosts do cluster.
+- *Pod*: É a menor unidade dentro de um cluster. Nada mais é do que containers rodando dentro de seu cluster de Kubernetes. Pode ser um container rodando nginx, php, apache etc…
+- *Replication Controller*: É o responsável por manter um número determinado de pods em execução. No RC é onde você diz quantos containers de nginx, php, apache você desejá que fiquem rodando; caso um caia, o RC cria outra instância automaticamente;
+- *Services*: É o responsável por atrelar uma faixa de IP para um determinado RC. Para que cada vez que o RC crie uma nova instância de pod, o mesmo inicie com um IP determinado pelo service.
+- *Namespace* : Com o namespace você pode dividir seu Cluster de Kubernetes em dois ambientes, Produção e Teste, podendo limitar os recursos computacionais para ambos.
+
+
+
