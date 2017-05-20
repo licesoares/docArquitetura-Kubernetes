@@ -1,6 +1,5 @@
 # Documentação Arquitetural do Sistema Kubenetes
 
-
 **Alunos:** Alice Soares, Luisa Helena, Maxmillian
 
 **Professor:** Marco Túlio de Oliveira Valente
@@ -41,7 +40,11 @@ A maior parte do sistema é escrita na linguagem “Go”, essa linguagem foi cr
 Em bem menor escala, as linguagens Shell, Makefile , Protocol Buffer, YAML, HTML, Markdown e Python também são utilizadas na aplicação.
 
 #### Equipe de desenvolvimento
-O Kubernetes é um sistema popular no GitHub, atualmente com 23.010 estrelas e 8.115 forks (11/05/2017), com 1.187 desenvolvedores ao redor do mundo. Para mostrar a evolução do desenvolvimento segue abaixo o gráfico de submissão de código de maio de 2015 até hoje:
+O Kubernetes é um sistema popular no GitHub, atualmente com 23.010 estrelas e 8.115 forks (11/05/2017), com 1.187 desenvolvedores ao redor do mundo. Para mostrar a evolução do desenvolvimento segue abaixo o gráfico de submissão de código de maio de 2015 até hoje:  
+  ![grafic-commit](
+  https://raw.githubusercontent.com/licesoares/docArquitetura-Kubernetes/master/img/grafic-commit.PNG)
+   			  Fonte:  https://github.com/kubernetes/kubernetes/graphs/commit-activity
+
 
 
 #### Evolução do sistema
