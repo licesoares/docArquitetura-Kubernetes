@@ -61,6 +61,7 @@ Fonte: Arquivo healthcheck.go do pacote Proxy Kubernetes.
 Fonte: Arquivo healthcheck.go do pacote Proxy Kubernetes.
 - *Interfaces*: Interfaces em Go são tipos que declaram um conjunto de métodos, que assim como em outras linguagens, não possuem implementação. Objetos que implementam todos os métodos de uma interface, 'herdam' essa interface (de forma um pouco diferente, uma vez que Go não possui herança).
 - *Encapsulamento*: Go encapsula coisas à nível de pacote. Nomes que começam com letra minúscula são visíveis apenas dentro do pacote.
+
 ![encapsulamento](
   https://raw.githubusercontent.com/licesoares/docArquitetura-Kubernetes/master/img/encapsulamento.png)
   
@@ -123,7 +124,7 @@ Segue abaixo a visão de Processo do Kubernetes e a descrição de cada componen
 
 #### Componentes
 Nó Master: Responsável por gerenciar o cluster do Kubernetes , sendo o ponto de entrada de todas as tarefas que são executadas. Sendo assim, o nó master cuida de orquestrar os nós de trabalho que estão sendo executados. Os principais componentes, são:
-- *API Server*: Explicado no tópico 2.1.
+- *API Server*: Explicado no tópico Frameworks.
 - *Etct (Cluster state store)*: Trata do armazenamento do estado do cluster, apoiando operações de alteração de configurações e em objetos do cluster.
 - *Scheduler*: O Scheduller gerencia a alocação de hosts e recursos para cada container. Após a criação de um Pod, por meio da API, o Scheduller verifica os recursos requisitados no Pod e o aloca à uma unidade do cluster.
 - *Controller Manager*: A maioria das funções básicas à nível de cluster são executadas pelo Controller Manager. Ele executa funções relacionadas a coleta de lixo nos Pods, ciclo de vida de aplicações, escalonamento de recursos, roteamento, vinculação de serviços e provisionamento.
@@ -134,7 +135,7 @@ Nó de trabalho: Os pods são executados neste nó onde contém todos os serviç
 - *Kube Proxy*: Solução para agrupamento de Pods com balanceamento de carga. Cada nó executa um kube-proxy que intercepta as chamadas de IP’s direcionando aos endereços corretos, equilibrando o tráfego entre clientes de um mesmo nó.
 
 #### Visão de desenvolvimento
-Segue abaixo a visão de desenvolvimento do Kubernetes com todos os seus pacotes. Devido ao grande número de classes existentes no código, elas não foram mapeadas nesta representação. 
+Segue abaixo a visão de desenvolvimento do Kubernetes com todos os seus pacotes principais. Devido ao grande número de subpacotes existentes no código, eles não foram mapeadas nesta representação. 
 
 ![visao-desenvolvimento](
   https://raw.githubusercontent.com/licesoares/docArquitetura-Kubernetes/master/img/visao-desenvolvimento.PNG)
