@@ -51,21 +51,27 @@ Apesar da linguagem Go não oferecer vários recursos considerados necessários 
 ![Estruturas](
   https://raw.githubusercontent.com/licesoares/docArquitetura-Kubernetes/master/img/Estruturas.png)
   
-Fonte: Arquivo healthcheck.go do pacote Proxy Kubernetes.
+Fonte: Arquivo healthcheck.go do pacote Proxy Kubernetes/Proxy/HealthCheck.
 
 - *Métodos*: Os métodos em Go são funções que operam em tipos (Estruturas) específicos. 
 
 ![Metodos](
   https://raw.githubusercontent.com/licesoares/docArquitetura-Kubernetes/master/img/Metodos.png)
   
-Fonte: Arquivo healthcheck.go do pacote Proxy Kubernetes.
+Fonte: Arquivo healthcheck.go do pacote Proxy Kubernetes/Proxy/HealthCheck.
 - *Interfaces*: Interfaces em Go são tipos que declaram um conjunto de métodos, que assim como em outras linguagens, não possuem implementação. Objetos que implementam todos os métodos de uma interface, 'herdam' essa interface (de forma um pouco diferente, uma vez que Go não possui herança).
+
+![interfaces](
+  https://raw.githubusercontent.com/licesoares/docArquitetura-Kubernetes/master/img/interfaces.png)
+  
+Fonte: Arquivo config.go do pacote Proxy Kubernetes/Proxy/Config.
+
 - *Encapsulamento*: Go encapsula coisas à nível de pacote. Nomes que começam com letra minúscula são visíveis apenas dentro do pacote.
 
 ![encapsulamento](
   https://raw.githubusercontent.com/licesoares/docArquitetura-Kubernetes/master/img/encapsulamento.png)
   
-Fonte: Arquivo healthcheck.go do pacote Proxy Kubernetes.
+Fonte: Arquivo healthcheck.go do pacote Proxy Kubernetes/Proxy/HealthCheck.
 
 Em bem menor escala, as linguagens Shell, Makefile , Protocol Buffer, YAML, HTML, Markdown e Python também são utilizadas na aplicação.
 
