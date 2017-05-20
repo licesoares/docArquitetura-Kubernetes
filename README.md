@@ -133,7 +133,7 @@ Segue abaixo a visão de desenvolvimento do Kubernetes com todos os seus pacotes
 Referências
 -----------
 
-https://kubernetes.io/
-https://github.com/kubernetes
+- https://kubernetes.io/
+- https://github.com/kubernetes
 
 
