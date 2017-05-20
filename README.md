@@ -167,7 +167,5 @@ Referências
 
 - https://kubernetes.io/
 - https://github.com/kubernetes
-- https://imasters.com.br/linguagens/trabalhando-com-go-golang-a-linguagem-do-google/
-- https://code.tutsplus.com/pt/tutorials/lets-go-object-oriented-programming-in-golang--cms-26540
-
+- https://tour.golang.org
 
