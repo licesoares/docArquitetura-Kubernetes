@@ -86,8 +86,31 @@ Os principais contribuintes do sistema são Clayton Coleman, arquiteto e engenhe
 Para guiar o desenvolvimento existem documentos sobre formas corretas de commits, bem como boas práticas de escrita de código, como pensar em nomes de variáveis e métodos, além de estruturas padrão de métodos, laços e etc.. Todo o desenvolvimento é passado por uma revisão de código antes de estar integrado a próxima release da ferramenta.
 Apesar do Kubernetes tratar-se de um sistema de código aberto, o desenvolvimento de plugins ou outras ferramentas dessa natureza requer autorizações especiais.
 
+                   
 #### Evolução do sistema
-Até hoje (12/05) o sistema teve liberação de 242 releases, a última versão liberada foi a v1.6.3, no dia 10/05/2017. Para cada versão existe a documentação de todas as modificações realizadas, bem como um link para o commit e revisão de código da correção/melhoria com uma descrição mais detalhada da alteração.
+Até hoje (21/05) foram lançadas mais de 240 releases, a última versão liberada foi a v1.6.4, no dia 19/05/2017. A versão v1.7 já está em modo alpha.4 de desenvolvimento. Para todas as versão existe a documentação de todas as modificações realizadas, bem como um link para o commit e revisão de código da correção/melhoria com uma descrição mais detalhada da alteração.
+Um pouco sobre a evolução do sistema:
+
+- v1.2.0 – Lançado em 12 de março de 2016
+
+Foram inseridas diversas melhorias no sistema desde a versão V1.1.1. Um suporte ao Ubuntu foi adicionado e algumas características experimentais foram implantadas. A mudanças mais significativas estão no aumento da escala de cluster que reduziram a sobrecarga do sistema em 4 vezes. A implantação do turnkey, API para automatizar a atualização permitindo lançamentos simultâneos e visualização de status. O Gerenciamento de clusters foi automatizado.
+
+- v1.3.0 – Lançado em 1 de julho de 2016
+
+A versão V1.3.0 foi lançada como V1.3.0-alpha.1 até V1.3.0-alpha.5, em seguida V1.3.0-beta.1 até V1.3.0-beta.3, todas com atualizações de funcionalidades e correções de erros. Dentre as implantações nesta versão estão os registros dos clusters federados em nuvem AWS e GCP e atualizações de segurança e autenticação.
+
+- v1.4.0 – Lançado em 26 de setembro de 2016
+
+Com a esta versão houveram melhorias na experiência do usuário que simplificou como obter e entender um cluster. Foi implantado suporte a aplicações como recursos de persistência aprimorados. Em Federação de cluster aconteceu a entrada global mult-cluster htttp através do GCE e GKE Clusters. A segurança foi aumentada com api de revisão de acesso e políticas de imagem de contêiner.
+
+- v1.5.0 – Lançado em 12 de dezembro de 2016
+
+Dentre as atualizações mais significantes, esta versão trouxe novos comandos, suporte do Windows Server Container, implantação de cluster foi simplificada e o suporte a federação foi melhorado.
+
+- v.1.6.0 – Lançado em 28 de março de 2017
+
+Kubernetes agora suporta até 5.000 nós via etcd v3, que é habilitado por padrão. O controle de acesso baseado em funções (rbac) foi graduado para beta e define funções de padrão seguro para o plano de controle, o nó e os componentes do controlador. A ferramenta bootstrap do cluster kubeadm se graduou para beta. Esta versão foi lançada com um problema que faz com o que a aplicação pare que é corrigida na versão v.1.6.1. Toda a comunicação está agora sobre tls. Plugins de autorização podem ser instalados pelo kubeadm, incluindo o novo padrão de rbac. O sistema de token bootstrap agora permite gerenciamento de token e expiração. A interação com os tempos de execução do recipiente é agora através da interface cri, permitindo uma integração mais fácil dos tempos de execução com o kubelet. Docker permanece o tempo de execução padrão via docker-cri. Tornou-se possível utilizar vários escalonadores. Recursos de armazenamento foram atualizados.
+
 
 #### Vocabulário específico
 
