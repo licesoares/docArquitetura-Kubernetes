@@ -75,6 +75,18 @@ Fonte: Arquivo healthcheck.go do pacote Proxy Kubernetes/Proxy/HealthCheck.
 
 Em bem menor escala, as linguagens Shell, Makefile , Protocol Buffer, YAML, HTML, Markdown e Python também são utilizadas na aplicação.
 
+#### Vocabulário específico
+
+- *Cluster*: Arquitetura de sistema capaz de combinar vários computadores para trabalharem em conjunto, sendo cada estação um nodo de uma rede formada pelo conjunto de computadores. No contexto de máquinas virtuais e containers, o nodo da rede pode ser cada container ou máquina virtual.
+- *Minions*: É o nome dado para cada host do cluster.
+- *Kubelet*: Agente que roda nos hosts do cluster.
+- *Pod*: É a menor unidade dentro de um cluster. Nada mais é do que containers rodando dentro de seu cluster de Kubernetes. Pode ser um container rodando nginx, php, apache etc…
+- *Replication Controller*: É o responsável por manter um número determinado de pods em execução. No RC é onde você diz quantos containers de nginx, php, apache você desejá que fiquem rodando; caso um caia, o RC cria outra instância automaticamente;
+- *Services*: É o responsável por atrelar uma faixa de IP para um determinado RC. Para que cada vez que o RC crie uma nova instância de pod, o mesmo inicie com um IP determinado pelo service.
+- *Namespace*: Com o namespace você pode dividir seu Cluster de Kubernetes em dois ambientes, Produção e Teste, podendo limitar os recursos computacionais para ambos.
+- *Docker*: Plataforma Open Source escrita em Go que facilita a criação e administração de ambientes isolados (containers). O Docker possibilita o empacotamento de uma aplicação/ambiente criando uma imagem, e dessa forma, tornando essa aplicação/ambiente totalmente portável para qualquer outro host.
+- *Minikube*: Ferramenta que facilita a execução do Kubernetes localmente. O Minikube pode, por exemplo, rootear um cluster Kubernetes de um único nodo dentro de uma VM em um laptop. Ele também é capaz de executar uma imagem de container Docker localmente.
+
 #### Equipe de desenvolvimento
 O Kubernetes é um sistema popular no GitHub, atualmente com 23.010 estrelas e 8.115 forks (11/05/2017), com 1.187 desenvolvedores ao redor do mundo. Para mostrar a evolução do desenvolvimento segue abaixo o gráfico de submissão de código de maio de 2015 até hoje:  
   ![grafic-commit](
@@ -101,7 +113,7 @@ A versão V1.3.0 foi lançada como V1.3.0-alpha.1 até V1.3.0-alpha.5, em seguid
 
 - v1.4.0 – Lançado em 26 de setembro de 2016
 
-Com esta versão houveram melhorias na experiência do usuário que simplificaram como obter e entender um cluster. Foi implantado suporte a aplicações e os recursos de persistência foram aprimorados. Em Federação de cluster aconteceu a entrada global multi-cluster htttp através do GCE e GKE Clusters. A segurança foi aumentada com api de revisão de acesso e políticas de imagem de contêiner.
+Com esta versão houveram melhorias na experiência do usuário que simplificaram como obter e entender um cluster. Foi implantado suporte a aplicações e os recursos de persistência foram aprimorados. Em Federação de cluster aconteceu a entrada global multi-cluster htttp através do GCE e GKE Clusters. A segurança foi aumentada com api de revisão de acesso e políticas de imagem de container.
 
 - v1.5.0 – Lançado em 12 de dezembro de 2016
 
@@ -111,16 +123,6 @@ Dentre as atualizações mais significantes, esta versão trouxe novos comandos,
 
 Kubernetes agora suporta até 5.000 nós via etcd v3, que é habilitado por padrão. O controle de acesso baseado em funções (rbac) foi graduado para beta e define funções de padrão seguro para o plano de controle, o nó e os componentes do controlador. A ferramenta bootstrap do cluster kubeadm se graduou para beta. Esta versão foi lançada com um problema que faz com o que a aplicação pare que foi corrigida na versão v.1.6.1. Toda a comunicação está agora sobre tls. Plugins de autorização podem ser instalados pelo kubeadm, incluindo o novo padrão de rbac. O sistema de token bootstrap agora permite gerenciamento de token e expiração. A interação com os tempos de execução do recipiente é agora através da interface cri, permitindo uma integração mais fácil dos tempos de execução com o kubelet. Docker permanece o tempo de execução padrão via docker-cri. Tornou-se possível utilizar vários escalonadores e os recursos de armazenamento foram atualizados.
 
-
-#### Vocabulário específico
-
-- *Cluster*: Arquitetura de sistema capaz de combinar vários computadores para trabalharem em conjunto, sendo cada estação um nodo de uma rede formada pelo conjunto de computadores. No contexto de máquinas virtuais e containers, o nodo da rede pode ser cada container ou máquina virtual.
-- *Minions*: É o nome dado para cada host do cluster.
-- *Kubelet*: Agente que roda nos hosts do cluster.
-- *Pod*: É a menor unidade dentro de um cluster. Nada mais é do que containers rodando dentro de seu cluster de Kubernetes. Pode ser um container rodando nginx, php, apache etc…
-- *Replication Controller*: É o responsável por manter um número determinado de pods em execução. No RC é onde você diz quantos containers de nginx, php, apache você desejá que fiquem rodando; caso um caia, o RC cria outra instância automaticamente;
-- *Services*: É o responsável por atrelar uma faixa de IP para um determinado RC. Para que cada vez que o RC crie uma nova instância de pod, o mesmo inicie com um IP determinado pelo service.
-- *Namespace* : Com o namespace você pode dividir seu Cluster de Kubernetes em dois ambientes, Produção e Teste, podendo limitar os recursos computacionais para ambos.
 
 Referências utilizadas
 --------------------
@@ -205,4 +207,5 @@ Referências
 - https://infoslack.com/devops/introducao-ao-kubernetes
 - http://fajlinux.com.br/devops/docker-cluster-com-o-kubernetes/
 - http://www.tothenew.com/blog/understanding-kubernetes-architecture-and-setting-up-a-cluster-on-ubuntu/
+- http://www.mundodocker.com.br/o-que-e-docker/
 
