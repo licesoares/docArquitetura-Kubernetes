@@ -101,7 +101,8 @@ Apesar do Kubernetes tratar-se de um sistema de código aberto, o desenvolviment
                    
 #### Evolução do sistema
 Até hoje (21/05) foram lançadas mais de 240 releases, a última versão liberada foi a v1.6.4, no dia 19/05/2017. A versão v1.7 já está em modo alpha.4 de desenvolvimento. Para todas as versões existe a documentação de todas as modificações realizadas, bem como um link para o commit e revisão de código da correção/melhoria com uma descrição mais detalhada da alteração.
-Um pouco sobre a evolução do sistema:
+
+Segue abaixo um pouco sobre a evolução do sistema com algumas das principais versões já disponibilizadas:
 
 - v1.2.0 – Lançado em 12 de março de 2016
 
