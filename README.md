@@ -17,11 +17,15 @@ A utilização de máquinas virtuais atualmente é consolidada e auxilia no dese
 </p>
 
 #### Objetivo
+<p align="justify">
 O Kubernetes além de prover o escalonamento e execução de containers de aplicações em clusters de máquinas físicas ou virtuais, oferece uma infraestrutura centrada em container que permite construir ambientes de desenvolvimento centrados em containers.
+</p>
 
 #### Kubenertes
+<p align="justify">
 O Kubernetes satisfaz diversas necessidades comuns de aplicações:
 - *Co-alocação de processos auxiliares*: O Kubernetes trabalha com o conceito de Pod, que é a menor unidade de computação que pode ser criada e gerenciada. Um Pod é um grupo de um ou mais containers, o armazenamento compartilhado entre eles e as opções de como executar este grupo.
+</p>
 
 - *Montagem de sistemas de armazenamento para persistência de dados*: Um container sempre é iniciado no estado “limpo”, a consequência disso é que caso um container falhe e seja reiniciado (o que ocorre automaticamente) os arquivos são perdidos. Outro problema é que na execução simultânea de containers de uma mesma aplicação é possível que seja necessário compartilhar recursos. Para resolver estes problemas o Kubernetes possui uma abstração de Volume.
 - *Proteção à informação sensível*: O Kubernetes chama de ‘Secret’ um objeto que contém algum tipo de informação sensível, como uma senha ou token. 
@@ -35,25 +39,34 @@ O Kubernetes satisfaz diversas necessidades comuns de aplicações:
 - *Logging* : O Kubernetes permite logs das aplicações recipientes.
 - *Segurança* : Níveis de autorização e autenticação para acesso às aplicações.
 
+<p align="justify">
 Kubernetes é de código aberto, está disponível no GitHub no link https://github.com/kubernetes/kubernetes e possui extensa documentação que pode ser acessada no link https://kubernetes.io/. Essa disponibilidade e documentação permite que os usuários vejam como toda a programação funciona, bem como os incentiva a criar novas funcionalidades ou melhorias que os ajudem em seus cenários. O sistema não limita os tipos de aplicativos suportados, não fornece middleware, estrutura de processamento de dados, bases de dados ou sistemas de armazenamento em cluster, apesar disso, é capaz de executar todos estes aplicativos.
+</p>
 
 #### O Desenvolvimento do Projeto
 
+<p align="justify">
 O Kubernetes é um conjunto de projetos, sendo que cada projeto é liderado por um grupo denominado SIG, abreviação para Special Interest Group (Grupo de interesse especial). A comunicação é organizada através de uma lista que contém canais de comunicação, como bate-papo, listas de discussão, conferências, problemas que precisam ser resolvidos e etc.. Os SIGs funcionam como estados em um país, podendo conter suas próprias políticas de contribuição, listas de discussão e etc.. 
-
+</p>
+<p align="justify">
 Existe uma auto organização entre todos os colaboradores e desenvolvedores do sistema. Com isso, se uma pessoa/desenvolvedor deseja se tornar um colaborador, este pode escolher um SIG e procurar dentre uma lista de problemas um problema a ser resolvido, preferenciamente que não precise de conhecimento profundo do sistema, já que é o primeiro desenvolvimento do programador no Kubernetes. Para trabalhar em uma nova ideia com escopo pequeno, o desenvolvedor pode enviar o problema descrevendo a alteração proposta ao repositório em questão e os proprietários do repositório irão responder de forma rápida (dentro do possível) dando aval ou não para a ideia proposta. Outra possibilidade de contribuição é encontrando bugs, nesse caso basta que a pessoa envie para os proprietários documentando o problema ou requisito que o sistema não captura. 
-
+</p>
+<p align="justify">
 Para o desenvolvimento no Kubernetes, é necessário que os desenvolvedores tenham familiaridade com conceitos de administração de cluster e arquitetura de software, de forma a responder se “pull request” se trata de uma questão de arquitetura ou se apenas resolve um bug. Para validar a correção de erros elaborada pelo desenvolvedor, o sistema se baseia, além do código, na cobertura de testes. Dessa forma, todas as modificações devem ser enviadas com a documentação dos testes e os testes realizados. Os testes também podem ser usados no apontamento de bugs, em que o contribuinte pode elaborar ou modificar um teste unitário de forma a encontrar o erro.
-
+</p>
+<p align="justify">
 Também é possível fazer melhorias na arquitetura adicionando novos recursos ou tornando um recurso mais modular, convertendo estruturas para interfaces, melhorando os testes ou mesmo tornando o código mais robusto. Geralmente essas melhorias diminuem as linhas de código e mantém as funcionalidades.
-
+</p>
+<p align="justify">
 Por fim, as alterações podem ser na melhoria de testes ou até alterações de arquitetura, em que geralmente um recurso é tornado mais modular, ou é feito um investimento para tornar o código mais robusto. De qualquer forma, todas as alterações passam por revisores, que possuem regras claras (e documentadas) para a submissão dos ajustes/novas funcionalidades. A seguir um fluxograma demonstrando quais os passos devem ser seguidos pelos programadores:
-
+</p>
 ![git_workflow](
   https://raw.githubusercontent.com/licesoares/docArquitetura-Kubernetes/master/img/git_workflow.png)
 
 #### Linguagem de programação utilizadas
+<p align="justify">
 A maior parte do sistema é escrita na linguagem “Go”, essa linguagem foi criada pela Google, e é de código livre desde 2009. A linguagem em questão tem o objetivo de acelerar o desenvolvimento e manutenção de programas complexos. Seguem algumas de suas características:
+</p>
 - *Programação concorrente/paralela nativa*: Não são usadas bibliotecas ou extensões para prover essas funcionalidades.
 - *Desempenho*: Baseada na linguagem C, Go tem foco em desempenho sendo altamente otimizado.
 - *Multiplataforma*: Linguagem possui suporte para Linux, Windows, MAC OS, FreeBSD e mobile.
@@ -62,8 +75,10 @@ A maior parte do sistema é escrita na linguagem “Go”, essa linguagem foi cr
 - *Garbage Collector nativo*: Incorporação de funcionalidade de linguagens de alto nível, de forma que o programador não precise se preocupar em limpar a memória utilizada.
 - *Memory Safe*: Go possui gestão de memória e threads de forma transparente ao programador, fazendo a gestão automática evitanto problemas de alocação e invasão de memória.
 - *Simples*: Com o foco em velocidade, vários recursos de linguagens de alto nível não estão presentes em Go, como Classes, Heranças, Overloads, Hierarquia de Tipos, Exceções e Ternários.
-
+</p>
+<p align="justify">
 Apesar da linguagem Go não oferecer vários recursos considerados necessários para orientação a objetos, ela possui algumas características que a caracterizam nesse paradigma:
+</p>
 - *Estruturas*: Go não possui classes ou métodos mas possui Estruturas. Estruturas são tipos definidos pelo usuário, que podem conter métodos (se assemelhando a uma classe).
 ![Estruturas](
   https://raw.githubusercontent.com/licesoares/docArquitetura-Kubernetes/master/img/Estruturas.png)
@@ -89,9 +104,9 @@ Fonte: Arquivo config.go do pacote Proxy Kubernetes/Proxy/Config.
   https://raw.githubusercontent.com/licesoares/docArquitetura-Kubernetes/master/img/encapsulamento.png)
   
 Fonte: Arquivo healthcheck.go do pacote Proxy Kubernetes/Proxy/HealthCheck.
-
+<p align="justify">
 Em bem menor escala, as linguagens Shell, Makefile , Protocol Buffer, YAML, HTML, Markdown e Python também são utilizadas na aplicação.
-
+</p>
 #### Vocabulário específico
 
 - *Cluster*: Arquitetura de sistema capaz de combinar vários computadores para trabalharem em conjunto, sendo cada estação um nodo de uma rede formada pelo conjunto de computadores. No contexto de máquinas virtuais e containers, o nodo da rede pode ser cada container ou máquina virtual.
@@ -105,30 +120,38 @@ Em bem menor escala, as linguagens Shell, Makefile , Protocol Buffer, YAML, HTML
 - *Minikube*: Ferramenta que facilita a execução do Kubernetes localmente. O Minikube pode, por exemplo, rootear um cluster Kubernetes de um único nodo dentro de uma VM em um laptop. Ele também é capaz de executar uma imagem de container Docker localmente.
 
 #### Equipe de desenvolvimento
+<p align="justify">
 O Kubernetes é um sistema popular no GitHub, atualmente com 23.010 estrelas e 8.115 forks (11/05/2017), com 1.187 desenvolvedores ao redor do mundo. Para mostrar a evolução do desenvolvimento segue abaixo o gráfico de submissão de código de maio de 2015 até hoje:  
+</p>
   ![grafic-commit](
   https://raw.githubusercontent.com/licesoares/docArquitetura-Kubernetes/master/img/grafic-commit.PNG)
    			  
 Fonte:  https://github.com/kubernetes/kubernetes/graphs/commit-activity
-
+<p align="justify">
 Os principais contribuintes do sistema são Clayton Coleman, arquiteto e engenheiro de Software do Kubernetes, com 994 commits e o Brendan Burns, com 993 commits na aplicação. Outros vários desenvolvedores têm destaque na página com diversos commits e contribuições relevantes no código. 
+</p>
+<p align="justify">
 Para guiar o desenvolvimento existem documentos sobre formas corretas de commits, bem como boas práticas de escrita de código, como pensar em nomes de variáveis e métodos, além de estruturas padrão de métodos, laços e etc.. Todo o desenvolvimento é passado por uma revisão de código antes de estar integrado a próxima release da ferramenta.
 Apesar do Kubernetes tratar-se de um sistema de código aberto, o desenvolvimento de plugins ou outras ferramentas dessa natureza requer autorizações especiais.
-
+</p>
                    
 #### Evolução do sistema
+<p align="justify">
 Até hoje (21/05) foram lançadas mais de 240 releases, a última versão liberada foi a v1.6.4, no dia 19/05/2017. A versão v1.7 já está em modo alpha.4 de desenvolvimento. Para todas as versões existe a documentação de todas as modificações realizadas, bem como um link para o commit e revisão de código da correção/melhoria com uma descrição mais detalhada da alteração.
 
 Segue abaixo um pouco sobre a evolução do sistema com algumas das principais versões já disponibilizadas:
-
+</p>
 - v1.2.0 – Lançado em 12 de março de 2016
-
+<p align="justify">
 Nesta versão foram implementadas melhorias significativas no sistema de escala, um aumento na escala de cluster em 400% representando 1000 nós com 30.000 pods por cluster. Além disso, a configuração passou a ser dinâmica, permitindo que a configuração dos aplicativos fosse armazenada como um objeto API Kubernetes e puxada dinamicamente na inicialização do container.
-
+</p>
+<p align="justify">
 A partir desta versão foi implementado também o Turnkey em modo Beta, que automatizou a implantação de atualizações do aplicativo, que agora são especificadas de forma declarativa. Esse app lida ainda com o controle de versão, permitindo vários lançamentos simultâneos, vinculando aos pods um status e mantendo a disponibilidade dos aplicativos.
-
+</p>
+<p align="justify">
 Os clusters do Kubernetes passaram a poder ocupar zonas dentro de um provedor de nuvem, o que significou a simplificação na forma de executar um contêiner em cada nó. 
-
+</p>
+<p align="justify">
 A partir desta versão o Kubernetes pôde agendar serviços com documentação por log através de apenas um pod por nó.
 
 O Kubernetes ganhou também mais facilidade na integração em ambientes de rede personalizadas, suportando TLS para comunicação segura e roteamento de tráfego baseado em http.
@@ -136,12 +159,12 @@ O Kubernetes ganhou também mais facilidade na integração em ambientes de rede
 Um novo comando foi implementado para uma preparação de operaçoes como upgrades e ou manutenções do kernel, o comando “kubectl drain”.
 
 Foi implementada também uma interface mais amigável baseada em Material Design.
-
+</p>
 ![newgui](
   https://raw.githubusercontent.com/licesoares/docArquitetura-Kubernetes/master/img/newgui.png)
 
 - v1.3.0 – Lançado em 1 de julho de 2016
-
+<p align="justify">
 Após diversas versões v1.2. e algumas versões alpha e beta da v1.3., a v1.3.0 foi lançada com alguns destaques.
 
 A partir desta versão o sistema ganhou autorização Alpha RBAC e todos os serviços de todos os clusters federados passaram a ser registrados na AWS e GCP. O Alpha PetSets passou a gerenciar aplicativos com status e a segurança foi reforçada. O Escalonador L7 LB e escalonadores de conexão de disco passaram a ser executados como master, evitando que nós precisem deste tipo de privilégio.
@@ -171,12 +194,13 @@ Um sistema de token de bootstrap passou a permitir gerenciamento de token e expi
 A interação com tempos de execução de contêineres agora é através da interface CRI, permitindo uma integração mais fácil dos tempos de execução com o kubelet. 
 
 Novos recursos de programação entraram em modo beta, nesta versão é tornou-se possível usar vários agendadores e Nodes e Pods passaram a suportar afinidade e anti afinidade. Além disso, houve a implementação de um agendamento avançado para ser realizado com tolerâncias e a inserção de uma funcionalidade que permite que o usuário especifique por Pod por quanto tempo um Pod deve ficar vinculado a um nó quando existirem problemas à nível de nó.
-
+</p>
 
 Referências utilizadas
 --------------------
 
 #### Frameworks
+<p align="justify">
 O Kubernetes possui uma API que visa facilitar a manipulação de objetos no sistema. Esses objetos são quaisquer unidades manipuláveis nos containers, como um nó, um Pod, um serviço, Namespace, etc. A API oferece uma linguagem declarativa e é extremamente poderosa, oferecendo abstração para o gerenciamento de domínios de objetos, controle de chamada e comportamento e concorrência de tarefa, além de validação das respostas recebidas nas chamadas feitas por objetos, classificando respostas com “Falha” ou “Inválida” em caso de erros. 
 Além dessa API, o Kubernetes conta com uma API Server, que tem o objetivo de servir a API, sendo um servidor relativamente simples, com módulos bem definidos processando principalmente as operações de REST, Representational State Transfer. Essas operações visam  ignorar de implementação dos objetos e focar nos papéis dos objetos, nas restrições sobre sua interação com outros componentes e na sua interpretação de elementos de dados significantes. A API Server também possui o objetivo de garantir a sincronização dos componentes, inicialização assíncrona de recursos, consistência entre os objetos e atuar como um gateway para o Cluster. A API Server deve ser acessível para clientes fora do Cluster, ao contrário dos nós e containers, dessa forma, passando pela autenticação da API Server esses clientes podem acessar os nós e containers que não eram acessíveis.
 
@@ -191,7 +215,7 @@ O Kubernetes utiliza/pode utilizar diversas ferramentas para facilitar a utiliza
 - *DataDog*: Ferramenta de monitoramento de serviços de infraestrutura, possibilitando alertas e análises de utilização de recursos.
 
 Outras diversas ferramentas podem ser utilizadas, ligadas principalmente à gerenciamento de recursos, rede, build e segurança e estão disponíveis na página https://kubernetes.io/partners/. 
-
+</p>
 
 Arquitetura
 --------------------
@@ -203,20 +227,24 @@ Segue abaixo a visão de Processo do Kubernetes e a descrição de cada componen
   https://raw.githubusercontent.com/licesoares/docArquitetura-Kubernetes/master/img/visao-processo.PNG)
 
 #### Componentes
+<p align="justify">
 Nó Master: Responsável por gerenciar o cluster do Kubernetes , sendo o ponto de entrada de todas as tarefas que são executadas. Sendo assim, o nó master cuida de orquestrar os nós de trabalho que estão sendo executados. Os principais componentes, são:
+</p>
 - *API Server*: Explicado no tópico Frameworks.
 - *Etct (Cluster state store)*: É um armazenamento de valor-chave , distribuído e consistente. É usado principalmente para configuração compartilhada de serviços. Ele fornece uma API REST para operações CRUD, bem como uma interface para registrar nós específicos, o que permite uma maneira confiável de notificar o restante do cluster sobre as alterações de configuração. Os dados armazenados pelo Kubernetes em etcd são os jobs agendado que são criados e implantados pelo pod/service, namespaces e informações de replicação, etc.
 - *Scheduler*: O Scheduller gerencia a alocação de hosts e recursos para cada container. Após a criação de um Pod, por meio da API, o Scheduller verifica os recursos requisitados no Pod e o aloca à uma unidade do cluster. Sendo assim,a implantação de pods e serviços configurados nos nós acontece graças ao componente scheduler. O Scheduller tem as informações sobre os recursos disponíveis nos membros do cluster, bem como os necessários para que o serviço configurado seja executado e, portanto, possa decidir onde implantar um serviço específico.
 - *Controller Manager*: Opcionalmente, você pode executar diferentes tipos de controladores dentro do nó master. O controlador usa apiserver para verificar o estado compartilhado do cluster e faz alterações corretivas para o estado atual para ser ficar no estado desejado. Um exemplo de controlador é de replicação, que cuida do número de pods do sistema. A replicação é configurada pelo usuário e essa é a responsabilidade do controlador de recriar um pod falhado ou remover um scheduler extra. Outros exemplos de controladores são o controlador de endpoints, o controlador de namespace e o controlador de service accounts. Sendo assim,a maioria das funções básicas à nível de cluster são executadas pelo Controller Manager. Ele executa funções relacionadas a coleta de lixo nos Pods, ciclo de vida de aplicações, escalonamento de recursos, roteamento, vinculação de serviços e provisionamento.
-
+<p align="justify">
 Nó de trabalho: Os pods são executados neste nó onde contém todos os serviços necessários para gerenciar a rede entre os contêineres, comunicando com o nó mestre e atribuindo recursos aos contêineres. Os principais componentes são:
+</p>
 - *Kubelet*: Kubelet obtém a configuração de um pod a partir do apiserver e garante que os containers estão em funcionamento. Este é o serviço do worker que é responsável pela comunicação com o nó master. Ele também se comunica com o etcd, para obter informações sobre serviços e escrever os detalhes sobre os recém-criados. Sendo assim , o kubelet é controlador da API dos pods e nós que controla toda a execução no container.
 - *Container Runtime*: Cada nó executa um tempo de execução de container, ou seja, o Kubelet desconhece o tempo de execução do sistema recipiente. Isso ocorre para manter os limites dos containers claros, facilitando testes e ligações entre as aplicações.
 - *Kube Proxy*: Solução para agrupamento de Pods com balanceamento de carga. Cada nó executa um kube-proxy que intercepta as chamadas de IP’s direcionando aos endereços corretos, equilibrando o tráfego entre clientes de um mesmo nó.
 
 #### Visão de desenvolvimento
+<p align="justify">
 Segue abaixo a visão de desenvolvimento do Kubernetes com todos os seus pacotes principais. Devido ao grande número de subpacotes existentes no código, eles não foram mapeadas nesta representação. 
-
+</p>
 ![visao-desenvolvimento](
   https://raw.githubusercontent.com/licesoares/docArquitetura-Kubernetes/master/img/visao-desenvolvimento.PNG)
   
@@ -241,8 +269,9 @@ Segue abaixo a visão de desenvolvimento do Kubernetes com todos os seus pacotes
 - *Volume*: Armazena todo código referente a Volumes no Kubernetes, incluindo representações internas e código de montagem e desmontagem de volumes.
 
 #### Visão Física
+<p align="justify">
 Como já foi explicado anteriormente,a ferramenta possui alguns conceitos específicos e sua arquitetura é elaborada para ser altamente escalável. Kubernetes possui uma unidade de controle chamada master server que executa vários serviços de uso exclusivo para o funcionamento do cluster. Toda a comunicação e configuração do cluster é realizada por meio do ETCD um armazenamento de chave-valor que salva o estado do cluster e compartilha entre os nós por meio de sua API HTTP/JSON. Cada minion possui um Docker em execução, além disso uma sub-rede privada dedicada à comunicação. Por meio da sub-rede temos rotas de tráfego para garantir o acesso a internet em todos os minions. 
-
+</p>
 ![visao-fisica](
   https://raw.githubusercontent.com/licesoares/docArquitetura-Kubernetes/master/img/visao-fisica.PNG)
 
