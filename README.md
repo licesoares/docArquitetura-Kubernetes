@@ -225,13 +225,13 @@ Além dessa API, o Kubernetes conta com uma API Server, que tem o objetivo de se
 <p align="justify">
 O Kubernetes utiliza/pode utilizar diversas ferramentas para facilitar a utilização, manutenção e build do sistema. Abaixo seguem algumas indicadas pelo software: </p>
 
-- *Godep*: Plataforma para estruturar o build fixando as dependências necessárias na compilação.
-- *Aqua*: Ferramenta que auxilia na garantia da segurança dos containers no Kubernetes. Por meio dessa ferramenta é possível configurar facilmente segurança das imagens criadas, bem como quais e o número de usuários que podem acessar a imagem simultaneamente. Além disso, a ferramenta permite uma segmentação de rede que ‘particiona’ a segurança de diferentes aplicações em um mesmo cluster do Kubernetes, ou seja, caso várias aplicações rodem em um mesmo cluster e uma delas sofra um ataque, essa ferramenta impede que as aplicações vizinhas sejam infectadas.
-- *Bitnami*: Ferramenta para auxiliar na compilação de blocos de um container, facilitando o building de blocos (aplicações) de um container e oferecendo modos de visualização gráfica de dados dos builds realizados.
-- *Plugin RA CDE Kubernetes*: Este plugin auxilia na atualização automática de arquivos YAML utilizados no Kubernetes para especificações de configuração.
-- *Canonical Distribution*: Ferramenta que possibilita a operação de clusters no Kubernets sob demanda, ou seja, geração de recurso para os containers de acordo com a necessidade do usuário.
-- *Crunchy PostgreSQL Container Suite*: Conjunto de ferramentas para auxiliar na manutenção dos microserviços do PostgresSQL nos containers do Kubernets.
-- *DataDog*: Ferramenta de monitoramento de serviços de infraestrutura, possibilitando alertas e análises de utilização de recursos.
+- *Godep*: <p align="justify">Plataforma para estruturar o build fixando as dependências necessárias na compilação.</p>
+- *Aqua*: <p align="justify">Ferramenta que auxilia na garantia da segurança dos containers no Kubernetes. Por meio dessa ferramenta é possível configurar facilmente segurança das imagens criadas, bem como quais e o número de usuários que podem acessar a imagem simultaneamente. Além disso, a ferramenta permite uma segmentação de rede que ‘particiona’ a segurança de diferentes aplicações em um mesmo cluster do Kubernetes, ou seja, caso várias aplicações rodem em um mesmo cluster e uma delas sofra um ataque, essa ferramenta impede que as aplicações vizinhas sejam infectadas.</p>
+- *Bitnami*:<p align="justify"> Ferramenta para auxiliar na compilação de blocos de um container, facilitando o building de blocos (aplicações) de um container e oferecendo modos de visualização gráfica de dados dos builds realizados.</p>
+- *Plugin RA CDE Kubernetes*: <p align="justify">Este plugin auxilia na atualização automática de arquivos YAML utilizados no Kubernetes para especificações de configuração.</p>
+- *Canonical Distribution*: <p align="justify">Ferramenta que possibilita a operação de clusters no Kubernets sob demanda, ou seja, geração de recurso para os containers de acordo com a necessidade do usuário.</p>
+- *Crunchy PostgreSQL Container Suite*: <p align="justify">Conjunto de ferramentas para auxiliar na manutenção dos microserviços do PostgresSQL nos containers do Kubernets.</p>
+- *DataDog*: <p align="justify">Ferramenta de monitoramento de serviços de infraestrutura, possibilitando alertas e análises de utilização de recursos.</p>
 
 <p align="justify">
 Outras diversas ferramentas podem ser utilizadas, ligadas principalmente à gerenciamento de recursos, rede, build e segurança e estão disponíveis na página https://kubernetes.io/partners/. 
