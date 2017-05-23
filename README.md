@@ -115,6 +115,9 @@ O Kubernetes ganhou também mais facilidade na integração em ambientes de rede
 Um novo comando foi implementado para uma preparação de operaçoes como upgrades e ou manutenções do kernel. O comando “kubectl drain”.
 Foi implementada também uma interface mais amigável baseadas em Material Design.
 
+![newgui](
+  https://raw.githubusercontent.com/licesoares/docArquitetura-Kubernetes/master/img/newgui.png)
+
 - v1.3.0 – Lançado em 1 de julho de 2016
 
 Após diversas versões v1.2. e algumas versões alpha e beta da v1.3., a v1.3.0 foi lançada com alguns destaques.
