@@ -35,6 +35,27 @@ O Kubernetes satisfaz diversas necessidades comuns de aplicações:
 
 Kubernetes é de código aberto, está disponível no GitHub no link https://github.com/kubernetes/kubernetes e possui extensa documentação que pode ser acessada no link https://kubernetes.io/. Essa disponibilidade e documentação permite que os usuários vejam como toda a programação funciona, bem como os incentiva a criar novas funcionalidades ou melhorias que os ajudem em seus cenários. O sistema não limita os tipos de aplicativos suportados, não fornece middleware, estrutura de processamento de dados, bases de dados ou sistemas de armazenamento em cluster, apesar disso, é capaz de executar todos estes aplicativos.
 
+#### O Desenvolvimento do Projeto
+
+O Kubernetes é um conjunto de projetos, sendo que cada projeto é liderado por um grupo denominado SIG, abreviação para Special Interest Group (Grupo de interesse especial).
+A comunicação é organizada através de uma lista que contém canais de comunicação como bate-papo, listas de discussão, conferências, problemas que precisam ser resolvidos e etc.
+Os SIG funcionam como estados em um país, podendo conter suas próprias políticas de contribuição, descrição README e suas próprias listas de discussão.
+Existe uma auto organização entre todos os colaboradores e desenvolvedores do sistema.
+Com isso, se uma pessoas/ desenvolvedor deseja se tornar um colaborador, este pode escolher um SIG e procurar dentre uma lista de problemas que não precisam de conhecimento profundo do sistema.
+Caso o programador queira desenvolver algo novo ou resolver algo maior, é necessário que ela estude a fundo a arquitetura do Kubernate.
+Se alguém deseja trabalhar em uma nova ideia com escopo pequeno, essa pessoa pode enviar o problema descrevendo a alteração proposta ao repositório em questão. Os proprietários do repositório irão responder de forma rápida dando aval ou não para a ideia proposta.
+Existe a possibilidade de contribuir também encontrando problemas. Nesse caso, basta que a pessoa envie para os proprietário o problema que pode ser uma quebra de contrato por exemplo. Um requisito que o documento não captura.
+É necessário que os desenvolvedores tenham familiaridade com conceitos de usuário e administração de cluster.
+Os desenvolvedores precisam se certificar de que o problema e ou “pull request” está melhorando a arquitetura ou se apenas resolve um problema.
+Para a correção de erros o sistema utiliza cobertura de testes, então as alterações devem ser enviadas com os devidos testes. Para apontar um bug, o contribuinte pode modificar um teste de unidade para que ele encontre o erro.
+Também é possível fazer melhorias na arquitetura adicionando novos recursos ou tornando um recurso mais modular, convertendo estruturas para interfaces, melhorando os testes ou mesmo tornando o código mais resiliente. Geralmente essas melhorias diminuem as linhas de código e mantém as funcionalidades.
+Tudo é feito a base de informações que comprovem a necessidade da alteração, como em uma melhoria de desempenho que exige que o programador envie junto ao erro ou baixo desempenho os dados que comprovem a necessidade. Para informações de desempenho o Kubernates tem o kubemark e o scheduler_perf.
+Todos os apontamentos passam por revisores gerando então a necessidade de regras bem sólidas que facilitem o trabalho do revisor. As versões alteradas oficiais utilizam Docker exigindo assim conhecimento do fluxo de trabalho pelo desenvolvedor.
+A seguir um fluxograma demonstrando quais os passos devem ser seguidos pelos programadores:
+
+![git_workflow](
+  https://raw.githubusercontent.com/licesoares/docArquitetura-Kubernetes/master/img/git_workflow.png)
+
 #### Linguagem de programação utilizadas
 A maior parte do sistema é escrita na linguagem “Go”, essa linguagem foi criada pela Google, e é de código livre desde 2009. A linguagem em questão tem o objetivo de acelerar o desenvolvimento e manutenção de programas complexos. Seguem algumas de suas características:
 - *Programação concorrente/paralela nativa*: Não são usadas bibliotecas ou extensões para prover essas funcionalidades.
