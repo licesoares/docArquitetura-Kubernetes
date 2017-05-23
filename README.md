@@ -37,21 +37,15 @@ Kubernetes é de código aberto, está disponível no GitHub no link https://git
 
 #### O Desenvolvimento do Projeto
 
-O Kubernetes é um conjunto de projetos, sendo que cada projeto é liderado por um grupo denominado SIG, abreviação para Special Interest Group (Grupo de interesse especial).
-A comunicação é organizada através de uma lista que contém canais de comunicação como bate-papo, listas de discussão, conferências, problemas que precisam ser resolvidos e etc.
-Os SIG funcionam como estados em um país, podendo conter suas próprias políticas de contribuição, descrição README e suas próprias listas de discussão.
-Existe uma auto organização entre todos os colaboradores e desenvolvedores do sistema.
-Com isso, se uma pessoas/ desenvolvedor deseja se tornar um colaborador, este pode escolher um SIG e procurar dentre uma lista de problemas que não precisam de conhecimento profundo do sistema.
-Caso o programador queira desenvolver algo novo ou resolver algo maior, é necessário que ela estude a fundo a arquitetura do Kubernate.
-Se alguém deseja trabalhar em uma nova ideia com escopo pequeno, essa pessoa pode enviar o problema descrevendo a alteração proposta ao repositório em questão. Os proprietários do repositório irão responder de forma rápida dando aval ou não para a ideia proposta.
-Existe a possibilidade de contribuir também encontrando problemas. Nesse caso, basta que a pessoa envie para os proprietário o problema que pode ser uma quebra de contrato por exemplo. Um requisito que o documento não captura.
-É necessário que os desenvolvedores tenham familiaridade com conceitos de usuário e administração de cluster.
-Os desenvolvedores precisam se certificar de que o problema e ou “pull request” está melhorando a arquitetura ou se apenas resolve um problema.
-Para a correção de erros o sistema utiliza cobertura de testes, então as alterações devem ser enviadas com os devidos testes. Para apontar um bug, o contribuinte pode modificar um teste de unidade para que ele encontre o erro.
-Também é possível fazer melhorias na arquitetura adicionando novos recursos ou tornando um recurso mais modular, convertendo estruturas para interfaces, melhorando os testes ou mesmo tornando o código mais resiliente. Geralmente essas melhorias diminuem as linhas de código e mantém as funcionalidades.
-Tudo é feito a base de informações que comprovem a necessidade da alteração, como em uma melhoria de desempenho que exige que o programador envie junto ao erro ou baixo desempenho os dados que comprovem a necessidade. Para informações de desempenho o Kubernates tem o kubemark e o scheduler_perf.
-Todos os apontamentos passam por revisores gerando então a necessidade de regras bem sólidas que facilitem o trabalho do revisor. As versões alteradas oficiais utilizam Docker exigindo assim conhecimento do fluxo de trabalho pelo desenvolvedor.
-A seguir um fluxograma demonstrando quais os passos devem ser seguidos pelos programadores:
+O Kubernetes é um conjunto de projetos, sendo que cada projeto é liderado por um grupo denominado SIG, abreviação para Special Interest Group (Grupo de interesse especial). A comunicação é organizada através de uma lista que contém canais de comunicação, como bate-papo, listas de discussão, conferências, problemas que precisam ser resolvidos e etc.. Os SIGs funcionam como estados em um país, podendo conter suas próprias políticas de contribuição, descrição README e suas próprias listas de discussão. 
+
+Existe uma auto organização entre todos os colaboradores e desenvolvedores do sistema. Com isso, se uma pessoa/desenvolvedor deseja se tornar um colaborador, este pode escolher um SIG e procurar dentre uma lista de problemas que não precisam de conhecimento profundo do sistema. Caso o programador queira desenvolver algo novo ou resolver algo maior, é necessário que ele estude a fundo a arquitetura do Kubernetes. Se alguém deseja trabalhar em uma nova ideia com escopo pequeno, essa pessoa pode enviar o problema descrevendo a alteração proposta ao repositório em questão e os proprietários do repositório irão responder de forma rápida (dentro do possível) dando aval ou não para a ideia proposta. Outra possibilidade de contribuição é encontrando problemas, nesse caso basta que a pessoa envie para os proprietários documentando o problema ou requisito que o sistema não captura.
+
+Para o desenvolvimento no Kubernetes, é necessário que os desenvolvedores tenham familiaridade com conceitos de usuário e administração de cluster. Os desenvolvedores precisam se certificar de que o problema e ou “pull request” está melhorando uma questão de arquitetura ou se apenas resolve um bug. Para validar a correção de erros elaborada pelo desenvolvedor, o sistema se baseia, além do código, na cobertura de testes. Dessa forma, todas as modificações devem ser enviadas com a documentação dos testes e os testes realizados. Para apontar um bug, o contribuinte pode modificar um teste de unidade para que ele encontre o erro.
+
+Também é possível fazer melhorias na arquitetura adicionando novos recursos ou tornando um recurso mais modular, convertendo estruturas para interfaces, melhorando os testes ou mesmo tornando o código mais robusto. Geralmente essas melhorias diminuem as linhas de código e mantém as funcionalidades.
+
+Por fim, todas as alterações passam por revisores, por isso existem regras sólidas para a submissão dos ajustes/novas funcionalidades. A seguir um fluxograma demonstrando quais os passos devem ser seguidos pelos programadores:
 
 ![git_workflow](
   https://raw.githubusercontent.com/licesoares/docArquitetura-Kubernetes/master/img/git_workflow.png)
