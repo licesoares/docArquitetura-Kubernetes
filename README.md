@@ -299,12 +299,9 @@ Segue abaixo a visão de desenvolvimento do Kubernetes com todos os seus pacotes
 Como já foi explicado anteriormente,a ferramenta possui alguns conceitos específicos e sua arquitetura é elaborada para ser altamente escalável. Kubernetes possui uma unidade de controle chamada master server que executa vários serviços de uso exclusivo para o funcionamento do cluster. Toda a comunicação e configuração do cluster é realizada por meio do ETCD um armazenamento de chave-valor que salva o estado do cluster e compartilha entre os nós por meio de sua API HTTP/JSON. Cada minion possui um Docker em execução, além disso uma sub-rede privada dedicada à comunicação. Por meio da sub-rede temos rotas de tráfego para garantir o acesso a internet em todos os minions. 
 </p>
 
-<div style="text-align:center" markdown="1">
-
-![visao-fisica](
+![visao-fisica]{ float: center; }(
   https://raw.githubusercontent.com/licesoares/docArquitetura-Kubernetes/master/img/visao-fisica.PNG)
- 
-</div>
+
 
 
 Referências
