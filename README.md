@@ -28,14 +28,14 @@ O Kubernetes satisfaz diversas necessidades comuns de aplicações:
 - *Montagem de sistemas de armazenamento para persistência de dados*: <p align="justify"> Um container sempre é iniciado no estado “limpo”, a consequência disso é que caso um container falhe e seja reiniciado (o que ocorre automaticamente) os arquivos são perdidos. Outro problema é que na execução simultânea de containers de uma mesma aplicação é possível que seja necessário compartilhar recursos. Para resolver estes problemas o Kubernetes possui uma abstração de Volume. </p>
 - *Proteção à informação sensível*: <p align="justify"> O Kubernetes chama de ‘Secret’ um objeto que contém algum tipo de informação sensível, como uma senha ou token. </p>
 - *Checagem da aplicação*: <p align="justify">São providas configurações diversas de Debug, Logging, Monitoramento, Tasks, Jobs, etc. de forma que o usuário consiga monitorar o funcionamento e execução dos containers.</p>
-- *Replicação de instâncias*: Duplicação de instâncias de Pods garantindo alta disponibilidade das aplicações.
-- *Dimensionamento automático horizontal*: Ajusta automaticamente o número de Pods em um controlador de replicação coincidindo com a utilização média de CPU observada.
-- *Sistema de nomes*: O Kubernetes oferece serviço de DNS para atribuir nomes de DNS’s a serviços das aplicações.
-- *Balanceamento de carga*: Pods são criados e destruídos dinamicamente de forma a não sobrecarregar a máquina.
-- *Atualização Contínua*: Provê atualização individual de Pod, de modo que não seja necessário desativar todo o serviço ao mesmo tempo.
-- *Monitoramento de Recursos*: Verificação de utilização de recursos a nível de Pod ou clusters inteiros.
-- *Logging* : O Kubernetes permite logs das aplicações recipientes.
-- *Segurança* : Níveis de autorização e autenticação para acesso às aplicações.
+- *Replicação de instâncias*: <p align="justify">Duplicação de instâncias de Pods garantindo alta disponibilidade das aplicações.</p>
+- *Dimensionamento automático horizontal*: <p align="justify">Ajusta automaticamente o número de Pods em um controlador de replicação coincidindo com a utilização média de CPU observada.</p>
+- *Sistema de nomes*: <p align="justify">O Kubernetes oferece serviço de DNS para atribuir nomes de DNS’s a serviços das aplicações.</p>
+- *Balanceamento de carga*: <p align="justify">Pods são criados e destruídos dinamicamente de forma a não sobrecarregar a máquina.</p>
+- *Atualização Contínua*: <p align="justify">Provê atualização individual de Pod, de modo que não seja necessário desativar todo o serviço ao mesmo tempo.</p>
+- *Monitoramento de Recursos*:<p align="justify"> Verificação de utilização de recursos a nível de Pod ou clusters inteiros.</p>
+- *Logging* :<p align="justify"> O Kubernetes permite logs das aplicações recipientes.</p>
+- *Segurança* :<p align="justify"> Níveis de autorização e autenticação para acesso às aplicações.</p>
 
 <p align="justify">
 Kubernetes é de código aberto, está disponível no GitHub no link https://github.com/kubernetes/kubernetes e possui extensa documentação que pode ser acessada no link https://kubernetes.io/. Essa disponibilidade e documentação permite que os usuários vejam como toda a programação funciona, bem como os incentiva a criar novas funcionalidades ou melhorias que os ajudem em seus cenários. O sistema não limita os tipos de aplicativos suportados, não fornece middleware, estrutura de processamento de dados, bases de dados ou sistemas de armazenamento em cluster, apesar disso, é capaz de executar todos estes aplicativos.
@@ -59,8 +59,8 @@ Por fim, as alterações podem ser na melhoria de testes ou até alterações de
   https://raw.githubusercontent.com/licesoares/docArquitetura-Kubernetes/master/img/git_workflow.png)
 
 #### Linguagem de programação utilizadas
-
-A maior parte do sistema é escrita na linguagem “Go”, essa linguagem foi criada pela Google, e é de código livre desde 2009. A linguagem em questão tem o objetivo de acelerar o desenvolvimento e manutenção de programas complexos. Seguem algumas de suas características:
+<p align="justify">
+A maior parte do sistema é escrita na linguagem “Go”, essa linguagem foi criada pela Google, e é de código livre desde 2009. A linguagem em questão tem o objetivo de acelerar o desenvolvimento e manutenção de programas complexos. Seguem algumas de suas características:</p>
 
 - *Programação concorrente/paralela nativa*: Não são usadas bibliotecas ou extensões para prover essas funcionalidades.
 - *Desempenho*: Baseada na linguagem C, Go tem foco em desempenho sendo altamente otimizado.
@@ -70,9 +70,9 @@ A maior parte do sistema é escrita na linguagem “Go”, essa linguagem foi cr
 - *Garbage Collector nativo*: Incorporação de funcionalidade de linguagens de alto nível, de forma que o programador não precise se preocupar em limpar a memória utilizada.
 - *Memory Safe*: Go possui gestão de memória e threads de forma transparente ao programador, fazendo a gestão automática evitanto problemas de alocação e invasão de memória.
 - *Simples*: Com o foco em velocidade, vários recursos de linguagens de alto nível não estão presentes em Go, como Classes, Heranças, Overloads, Hierarquia de Tipos, Exceções e Ternários.
-
+<p align="justify">
 Apesar da linguagem Go não oferecer vários recursos considerados necessários para orientação a objetos, ela possui algumas características que a caracterizam nesse paradigma:
-
+</p>
 - *Estruturas*: Go não possui classes ou métodos mas possui Estruturas. Estruturas são tipos definidos pelo usuário, que podem conter métodos (se assemelhando a uma classe).
 ![Estruturas](
   https://raw.githubusercontent.com/licesoares/docArquitetura-Kubernetes/master/img/Estruturas.png)
@@ -98,35 +98,38 @@ Fonte: Arquivo config.go do pacote Proxy Kubernetes/Proxy/Config.
   https://raw.githubusercontent.com/licesoares/docArquitetura-Kubernetes/master/img/encapsulamento.png)
   
 Fonte: Arquivo healthcheck.go do pacote Proxy Kubernetes/Proxy/HealthCheck.
-
+<p align="justify">
 Em bem menor escala, as linguagens Shell, Makefile , Protocol Buffer, YAML, HTML, Markdown e Python também são utilizadas na aplicação.
-
+</p>
 #### Vocabulário específico
 
-- *Cluster*: Arquitetura de sistema capaz de combinar vários computadores para trabalharem em conjunto, sendo cada estação um nodo de uma rede formada pelo conjunto de computadores. No contexto de máquinas virtuais e containers, o nodo da rede pode ser cada container ou máquina virtual.
-- *Minions*: É o nome dado para cada host do cluster.
-- *Kubelet*: Agente que roda nos hosts do cluster.
-- *Pod*: É a menor unidade dentro de um cluster. Nada mais é do que containers rodando dentro de seu cluster de Kubernetes. Pode ser um container rodando nginx, php, apache etc…
-- *Replication Controller*: É o responsável por manter um número determinado de pods em execução. No RC é onde você diz quantos containers de nginx, php, apache você desejá que fiquem rodando; caso um caia, o RC cria outra instância automaticamente;
-- *Services*: É o responsável por atrelar uma faixa de IP para um determinado RC. Para que cada vez que o RC crie uma nova instância de pod, o mesmo inicie com um IP determinado pelo service.
-- *Namespace*: Com o namespace você pode dividir seu Cluster de Kubernetes em dois ambientes, Produção e Teste, podendo limitar os recursos computacionais para ambos.
-- *Docker*: Plataforma Open Source escrita em Go que facilita a criação e administração de ambientes isolados (containers). O Docker possibilita o empacotamento de uma aplicação/ambiente criando uma imagem, e dessa forma, tornando essa aplicação/ambiente totalmente portável para qualquer outro host.
-- *Minikube*: Ferramenta que facilita a execução do Kubernetes localmente. O Minikube pode, por exemplo, rootear um cluster Kubernetes de um único nodo dentro de uma VM em um laptop. Ele também é capaz de executar uma imagem de container Docker localmente.
+- *Cluster*:<p align="justify"> Arquitetura de sistema capaz de combinar vários computadores para trabalharem em conjunto, sendo cada estação um nodo de uma rede formada pelo conjunto de computadores. No contexto de máquinas virtuais e containers, o nodo da rede pode ser cada container ou máquina virtual.</p>
+- *Minions*: <p align="justify">É o nome dado para cada host do cluster.</p>
+- *Kubelet*: <p align="justify">Agente que roda nos hosts do cluster.</p>
+- *Pod*: <p align="justify">É a menor unidade dentro de um cluster. Nada mais é do que containers rodando dentro de seu cluster de Kubernetes. Pode ser um container rodando nginx, php, apache etc…</p>
+- *Replication Controller*: <p align="justify">É o responsável por manter um número determinado de pods em execução. No RC é onde você diz quantos containers de nginx, php, apache você desejá que fiquem rodando; caso um caia, o RC cria outra instância automaticamente;</p>
+- *Services*: <p align="justify">É o responsável por atrelar uma faixa de IP para um determinado RC. Para que cada vez que o RC crie uma nova instância de pod, o mesmo inicie com um IP determinado pelo service.</p>
+- *Namespace*: <p align="justify">Com o namespace você pode dividir seu Cluster de Kubernetes em dois ambientes, Produção e Teste, podendo limitar os recursos computacionais para ambos.</p>
+- *Docker*: <p align="justify">Plataforma Open Source escrita em Go que facilita a criação e administração de ambientes isolados (containers). O Docker possibilita o empacotamento de uma aplicação/ambiente criando uma imagem, e dessa forma, tornando essa aplicação/ambiente totalmente portável para qualquer outro host.</p>
+- *Minikube*:<p align="justify"> Ferramenta que facilita a execução do Kubernetes localmente. O Minikube pode, por exemplo, rootear um cluster Kubernetes de um único nodo dentro de uma VM em um laptop. Ele também é capaz de executar uma imagem de container Docker localmente.</p>
 
 #### Equipe de desenvolvimento
 
+<p align="justify"> 
 O Kubernetes é um sistema popular no GitHub, atualmente com 23.010 estrelas e 8.115 forks (11/05/2017), com 1.187 desenvolvedores ao redor do mundo. Para mostrar a evolução do desenvolvimento segue abaixo o gráfico de submissão de código de maio de 2015 até hoje:  
+</p>
 
   ![grafic-commit](
   https://raw.githubusercontent.com/licesoares/docArquitetura-Kubernetes/master/img/grafic-commit.PNG)
    			  
 Fonte:  https://github.com/kubernetes/kubernetes/graphs/commit-activity
 
+<p align="justify"> 
 Os principais contribuintes do sistema são Clayton Coleman, arquiteto e engenheiro de Software do Kubernetes, com 994 commits e o Brendan Burns, com 993 commits na aplicação. Outros vários desenvolvedores têm destaque na página com diversos commits e contribuições relevantes no código. 
-
+</p><p align="justify"> 
 Para guiar o desenvolvimento existem documentos sobre formas corretas de commits, bem como boas práticas de escrita de código, como pensar em nomes de variáveis e métodos, além de estruturas padrão de métodos, laços e etc.. Todo o desenvolvimento é passado por uma revisão de código antes de estar integrado a próxima release da ferramenta.
 Apesar do Kubernetes tratar-se de um sistema de código aberto, o desenvolvimento de plugins ou outras ferramentas dessa natureza requer autorizações especiais.
-
+</p>
                    
 #### Evolução do sistema
 
