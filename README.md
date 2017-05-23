@@ -76,12 +76,12 @@ Apesar da linguagem Go não oferecer vários recursos considerados necessários 
 </p>
 
 - *Estruturas*: Go não possui classes ou métodos mas possui Estruturas. Estruturas são tipos definidos pelo usuário, que podem conter métodos (se assemelhando a uma classe).
-<p align="center">
-![Estruturas](
-  https://raw.githubusercontent.com/licesoares/docArquitetura-Kubernetes/master/img/Estruturas.png)
+
+->![Estruturas](
+  https://raw.githubusercontent.com/licesoares/docArquitetura-Kubernetes/master/img/Estruturas.png)<-
   
 Fonte: Arquivo healthcheck.go do pacote Proxy Kubernetes/Proxy/HealthCheck.
-</p>
+
 
 - *Métodos*: Os métodos em Go são funções que operam em tipos (Estruturas) específicos. 
 
