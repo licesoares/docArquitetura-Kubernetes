@@ -25,11 +25,9 @@ O Kubernetes além de prover o escalonamento e execução de containers de aplic
 
 O Kubernetes satisfaz diversas necessidades comuns de aplicações:
 - *Co-alocação de processos auxiliares*: <p align="justify"> O Kubernetes trabalha com o conceito de Pod, que é a menor unidade de computação que pode ser criada e gerenciada. Um Pod é um grupo de um ou mais containers, o armazenamento compartilhado entre eles e as opções de como executar este grupo. </p>
-
-
-- *Montagem de sistemas de armazenamento para persistência de dados*: Um container sempre é iniciado no estado “limpo”, a consequência disso é que caso um container falhe e seja reiniciado (o que ocorre automaticamente) os arquivos são perdidos. Outro problema é que na execução simultânea de containers de uma mesma aplicação é possível que seja necessário compartilhar recursos. Para resolver estes problemas o Kubernetes possui uma abstração de Volume.
-- *Proteção à informação sensível*: O Kubernetes chama de ‘Secret’ um objeto que contém algum tipo de informação sensível, como uma senha ou token. 
-- *Checagem da aplicação*: São providas configurações diversas de Debug, Logging, Monitoramento, Tasks, Jobs, etc. de forma que o usuário consiga monitorar o funcionamento e execução dos containers.
+- *Montagem de sistemas de armazenamento para persistência de dados*: <p align="justify"> Um container sempre é iniciado no estado “limpo”, a consequência disso é que caso um container falhe e seja reiniciado (o que ocorre automaticamente) os arquivos são perdidos. Outro problema é que na execução simultânea de containers de uma mesma aplicação é possível que seja necessário compartilhar recursos. Para resolver estes problemas o Kubernetes possui uma abstração de Volume. </p>
+- *Proteção à informação sensível*: <p align="justify"> O Kubernetes chama de ‘Secret’ um objeto que contém algum tipo de informação sensível, como uma senha ou token. </p>
+- *Checagem da aplicação*: <p align="justify">São providas configurações diversas de Debug, Logging, Monitoramento, Tasks, Jobs, etc. de forma que o usuário consiga monitorar o funcionamento e execução dos containers.</p>
 - *Replicação de instâncias*: Duplicação de instâncias de Pods garantindo alta disponibilidade das aplicações.
 - *Dimensionamento automático horizontal*: Ajusta automaticamente o número de Pods em um controlador de replicação coincidindo com a utilização média de CPU observada.
 - *Sistema de nomes*: O Kubernetes oferece serviço de DNS para atribuir nomes de DNS’s a serviços das aplicações.
@@ -39,22 +37,23 @@ O Kubernetes satisfaz diversas necessidades comuns de aplicações:
 - *Logging* : O Kubernetes permite logs das aplicações recipientes.
 - *Segurança* : Níveis de autorização e autenticação para acesso às aplicações.
 
-
+<p align="justify">
 Kubernetes é de código aberto, está disponível no GitHub no link https://github.com/kubernetes/kubernetes e possui extensa documentação que pode ser acessada no link https://kubernetes.io/. Essa disponibilidade e documentação permite que os usuários vejam como toda a programação funciona, bem como os incentiva a criar novas funcionalidades ou melhorias que os ajudem em seus cenários. O sistema não limita os tipos de aplicativos suportados, não fornece middleware, estrutura de processamento de dados, bases de dados ou sistemas de armazenamento em cluster, apesar disso, é capaz de executar todos estes aplicativos.
-
+</p>
 
 #### O Desenvolvimento do Projeto
 
-
+<p align="justify">
 O Kubernetes é um conjunto de projetos, sendo que cada projeto é liderado por um grupo denominado SIG, abreviação para Special Interest Group (Grupo de interesse especial). A comunicação é organizada através de uma lista que contém canais de comunicação, como bate-papo, listas de discussão, conferências, problemas que precisam ser resolvidos e etc.. Os SIGs funcionam como estados em um país, podendo conter suas próprias políticas de contribuição, listas de discussão e etc.. 
-
+</p><p align="justify">
 Existe uma auto organização entre todos os colaboradores e desenvolvedores do sistema. Com isso, se uma pessoa/desenvolvedor deseja se tornar um colaborador, este pode escolher um SIG e procurar dentre uma lista de problemas um problema a ser resolvido, preferenciamente que não precise de conhecimento profundo do sistema, já que é o primeiro desenvolvimento do programador no Kubernetes. Para trabalhar em uma nova ideia com escopo pequeno, o desenvolvedor pode enviar o problema descrevendo a alteração proposta ao repositório em questão e os proprietários do repositório irão responder de forma rápida (dentro do possível) dando aval ou não para a ideia proposta. Outra possibilidade de contribuição é encontrando bugs, nesse caso basta que a pessoa envie para os proprietários documentando o problema ou requisito que o sistema não captura. 
-
+</p><p align="justify">
 Para o desenvolvimento no Kubernetes, é necessário que os desenvolvedores tenham familiaridade com conceitos de administração de cluster e arquitetura de software, de forma a responder se “pull request” se trata de uma questão de arquitetura ou se apenas resolve um bug. Para validar a correção de erros elaborada pelo desenvolvedor, o sistema se baseia, além do código, na cobertura de testes. Dessa forma, todas as modificações devem ser enviadas com a documentação dos testes e os testes realizados. Os testes também podem ser usados no apontamento de bugs, em que o contribuinte pode elaborar ou modificar um teste unitário de forma a encontrar o erro.
-
+</p><p align="justify">
 Também é possível fazer melhorias na arquitetura adicionando novos recursos ou tornando um recurso mais modular, convertendo estruturas para interfaces, melhorando os testes ou mesmo tornando o código mais robusto. Geralmente essas melhorias diminuem as linhas de código e mantém as funcionalidades.
-
+</p><p align="justify">
 Por fim, as alterações podem ser na melhoria de testes ou até alterações de arquitetura, em que geralmente um recurso é tornado mais modular, ou é feito um investimento para tornar o código mais robusto. De qualquer forma, todas as alterações passam por revisores, que possuem regras claras (e documentadas) para a submissão dos ajustes/novas funcionalidades. A seguir um fluxograma demonstrando quais os passos devem ser seguidos pelos programadores:
+</p>
 
 ![git_workflow](
   https://raw.githubusercontent.com/licesoares/docArquitetura-Kubernetes/master/img/git_workflow.png)
