@@ -267,7 +267,7 @@ Nó de trabalho: Os pods são executados neste nó onde contém todos os serviç
 #### Visão de desenvolvimento
 
 <p align="justify">
-O código do Kubernetes é extenso, mas é bem modularizado e cada arquivo de código, geralmente, não excede 300 linhas. Além disso, o código é bem comentado, tendo em toda função uma explicação sucinta do seu objetivo e comentários dentros das funções em operações mais complexas.</p>
+O código do Kubernetes é extenso, mas é bem modularizado e cada arquivo de código, geralmente, não excede 300 linhas. Além disso, o código é bem comentado, tendo em toda função uma explicação sucinta do seu objetivo e comentários dentro das funções em operações mais complexas.</p>
 <p align="justify">
 Segue abaixo a visão de desenvolvimento do Kubernetes com todos os seus pacotes principais. Devido ao grande número de subpacotes existentes no código, eles não foram mapeados nesta representação. 
 </p>
@@ -275,25 +275,25 @@ Segue abaixo a visão de desenvolvimento do Kubernetes com todos os seus pacotes
 ![visao-desenvolvimento](
   https://raw.githubusercontent.com/licesoares/docArquitetura-Kubernetes/master/img/visao-desenvolvimento.PNG)
   
-- *API*: Pacote que contém o código da representação dos objetos Kubernetes em memória.
+- *API*: <p align="justify">Pacote que contém o código da representação dos objetos Kubernetes em memória.</p>
 - *Capabilities*: <p align="justify">Código de gerenciamento de recursos à nível de sistema, este pacote provê diversas formas de configurações de privilégios, de forma que o usuário possa optar sob o nível/tipo de gerenciamento de recursos desejado no container.</p>
-- *CloudProvider*: Fornece interfaces e implementações para provedores de serviços na nuvem, como balanceamento de carga, rotas e gerenciamento de hosts.
+- *CloudProvider*: <p align="justify">Fornece interfaces e implementações para provedores de serviços na nuvem, como balanceamento de carga, rotas e gerenciamento de hosts.</p>
 - *Controller*: <p align="justify">Código de controladores do sistema. No Kubernetes, um controlador é um loop de controle que observa o estado compartilhado do cluster através da APIServer e faz alterações tentando mover o estado atual para o estado desejado. Exemplos de controladores que acompanham Kubernetes hoje são o controlador de replicação, controlador de pontos de extremidade, controlador de namespace e controlador de contas de serviço.</p>
-- *CredentialProvider*: Provê interfaces e implementações para esquema de autenticação de softwares de terceiros em um container.
-- *FieldPath*: Fornece métodos para extrair atributos/campos de objetos dado um determinado caminho.
-- *Generated*: Pacote para armazenamento de arquivos gerados automaticamente durante o build completo do sistema.
+- *CredentialProvider*: <p align="justify">Provê interfaces e implementações para esquema de autenticação de softwares de terceiros em um container.</p>
+- *FieldPath*:<p align="justify"> Fornece métodos para extrair atributos/campos de objetos dado um determinado caminho.</p>
+- *Generated*:<p align="justify"> Pacote para armazenamento de arquivos gerados automaticamente durante o build completo do sistema.</p>
 - *KubeApiServer*: <p align="justify">Pacote que armazena código comum da API Server, que não deve ser utilizado como código genérico da API. O módulo possui operações de validação e configuração de dados para os objetos api que incluem Pods, Services, ReplicationControllers e outros. Além disso, nessa parte do código ficam localizadas a implementação das operações de REST e o frontend do estado compartilhado do cluster através do qual todos os outros componentes interagem.</p>
-- *KubeCtl*: Bibliotecas usadas para manipulação de ferramentas na linha de comando kubeclt.
+- *KubeCtl*: <p align="justify">Bibliotecas usadas para manipulação de ferramentas na linha de comando kubeclt.</p>
 - *KubeLet*: <p align="justify">Contém código responsável pelo gerenciamento de Pod à nível de Nó, que é executado em cada Nó de trabalho. O Kubelet é o principal "agente de nó" que é executado em cada nó. O kubelet funciona em termos de um PodSpec, que é um objeto YAML ou JSON que descreve um Pod. O kubelet tem um conjunto de PodSpecs que são fornecidos através de vários mecanismos (principalmente através da APIServer) e garante que os recipientes descritos nesses PodSpecs estão em execução e sem problemas com recursos. A implementação do kubelet não contempla o gerenciamento de contêineres que não foram criados pela Kubernetes.</p>
-- *Master*: Este pacote é responsável por todo o código de configuração de execução do Nó Master, explicado na seção 3.1.
-- *Probe*: Código de utilitários para verificação da utilização de recursos das aplicações no Nó.
-- *Proxy*: Implementação do proxy de rede para comunicação transparente dos containers.
-- *Registry*: Implementação do armazenamento e lógica do sistema da API Server.
-- *Routes*: Pacote com uma coleção de rotas de tramitação http de pacotes.
-- *Security*: Implementação de requisitos de segurança da API.
-- *Util*: Implementação de métodos úteis que podem ser usados em qualquer outro pacote, este pacote, no entanto, não depende de nenhum pacote.
-- *Version*: Pacote que contém informações da versão a ser gerada, informações gerais da última configuração de build para geração de nova versão.
-- *Volume*: Armazena todo código referente a Volumes no Kubernetes, incluindo representações internas e código de montagem e desmontagem de volumes.
+- *Master*: <p align="justify">Este pacote é responsável por todo o código de configuração de execução do Nó Master, explicado na seção 3.1.</p>
+- *Probe*: <p align="justify">Código de utilitários para verificação da utilização de recursos das aplicações no Nó.</p>
+- *Proxy*: <p align="justify">Implementação do proxy de rede para comunicação transparente dos containers.</p>
+- *Registry*: <p align="justify">Implementação do armazenamento e lógica do sistema da API Server.</p>
+- *Routes*: <p align="justify">Pacote com uma coleção de rotas de tramitação http de pacotes.</p>
+- *Security*: <p align="justify">Implementação de requisitos de segurança da API.</p>
+- *Util*: <p align="justify">Implementação de métodos úteis que podem ser usados em qualquer outro pacote, este pacote, no entanto, não depende de nenhum pacote.</p>
+- *Version*: <p align="justify">Pacote que contém informações da versão a ser gerada, informações gerais da última configuração de build para geração de nova versão.</p>
+- *Volume*: <p align="justify">Armazena todo código referente a Volumes no Kubernetes, incluindo representações internas e código de montagem e desmontagem de volumes.</p>
 
 #### Visão Física
 
