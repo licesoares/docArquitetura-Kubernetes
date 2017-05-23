@@ -244,22 +244,27 @@ Segue abaixo a visão de Processo do Kubernetes e a descrição de cada componen
 
 #### Componentes
 
+<p align="justify">
 Nó Master: Responsável por gerenciar o cluster do Kubernetes , sendo o ponto de entrada de todas as tarefas que são executadas. Sendo assim, o nó master cuida de orquestrar os nós de trabalho que estão sendo executados. Os principais componentes, são:
+</p>
 
 - *API Server*: Explicado no tópico Frameworks.
-- *Etct (Cluster state store)*: É um armazenamento de valor-chave , distribuído e consistente. É usado principalmente para configuração compartilhada de serviços. Ele fornece uma API REST para operações CRUD, bem como uma interface para registrar nós específicos, o que permite uma maneira confiável de notificar o restante do cluster sobre as alterações de configuração. Os dados armazenados pelo Kubernetes em etcd são os jobs agendado que são criados e implantados pelo pod/service, namespaces e informações de replicação, etc.
-- *Scheduler*: O Scheduller gerencia a alocação de hosts e recursos para cada container. Após a criação de um Pod, por meio da API, o Scheduller verifica os recursos requisitados no Pod e o aloca à uma unidade do cluster. Sendo assim,a implantação de pods e serviços configurados nos nós acontece graças ao componente scheduler. O Scheduller tem as informações sobre os recursos disponíveis nos membros do cluster, bem como os necessários para que o serviço configurado seja executado e, portanto, possa decidir onde implantar um serviço específico.
-- *Controller Manager*: Opcionalmente, você pode executar diferentes tipos de controladores dentro do nó master. O controlador usa apiserver para verificar o estado compartilhado do cluster e faz alterações corretivas para o estado atual para ser ficar no estado desejado. Um exemplo de controlador é de replicação, que cuida do número de pods do sistema. A replicação é configurada pelo usuário e essa é a responsabilidade do controlador de recriar um pod falhado ou remover um scheduler extra. Outros exemplos de controladores são o controlador de endpoints, o controlador de namespace e o controlador de service accounts. Sendo assim,a maioria das funções básicas à nível de cluster são executadas pelo Controller Manager. Ele executa funções relacionadas a coleta de lixo nos Pods, ciclo de vida de aplicações, escalonamento de recursos, roteamento, vinculação de serviços e provisionamento.
+- *Etct (Cluster state store)*: <p align="justify">É um armazenamento de valor-chave , distribuído e consistente. É usado principalmente para configuração compartilhada de serviços. Ele fornece uma API REST para operações CRUD, bem como uma interface para registrar nós específicos, o que permite uma maneira confiável de notificar o restante do cluster sobre as alterações de configuração. Os dados armazenados pelo Kubernetes em etcd são os jobs agendado que são criados e implantados pelo pod/service, namespaces e informações de replicação, etc.</p>
+- *Scheduler*: <p align="justify">O Scheduller gerencia a alocação de hosts e recursos para cada container. Após a criação de um Pod, por meio da API, o Scheduller verifica os recursos requisitados no Pod e o aloca à uma unidade do cluster. Sendo assim,a implantação de pods e serviços configurados nos nós acontece graças ao componente scheduler. O Scheduller tem as informações sobre os recursos disponíveis nos membros do cluster, bem como os necessários para que o serviço configurado seja executado e, portanto, possa decidir onde implantar um serviço específico.</p>
+- *Controller Manager*: <p align="justify">Opcionalmente, você pode executar diferentes tipos de controladores dentro do nó master. O controlador usa apiserver para verificar o estado compartilhado do cluster e faz alterações corretivas para o estado atual para ser ficar no estado desejado. Um exemplo de controlador é de replicação, que cuida do número de pods do sistema. A replicação é configurada pelo usuário e essa é a responsabilidade do controlador de recriar um pod falhado ou remover um scheduler extra. Outros exemplos de controladores são o controlador de endpoints, o controlador de namespace e o controlador de service accounts. Sendo assim,a maioria das funções básicas à nível de cluster são executadas pelo Controller Manager. Ele executa funções relacionadas a coleta de lixo nos Pods, ciclo de vida de aplicações, escalonamento de recursos, roteamento, vinculação de serviços e provisionamento.</p>
 
-Nó de trabalho: Os pods são executados neste nó onde contém todos os serviços necessários para gerenciar a rede entre os contêineres, comunicando com o nó mestre e atribuindo recursos aos contêineres. Os principais componentes são:
+<p align="justify">
+Nó de trabalho: Os pods são executados neste nó onde contém todos os serviços necessários para gerenciar a rede entre os contêineres, comunicando com o nó mestre e atribuindo recursos aos contêineres. Os principais componentes são:</p>
 
-- *Kubelet*: Kubelet obtém a configuração de um pod a partir do apiserver e garante que os containers estão em funcionamento. Este é o serviço do worker que é responsável pela comunicação com o nó master. Ele também se comunica com o etcd, para obter informações sobre serviços e escrever os detalhes sobre os recém-criados. Sendo assim , o kubelet é controlador da API dos pods e nós que controla toda a execução no container.
-- *Container Runtime*: Cada nó executa um tempo de execução de container, ou seja, o Kubelet desconhece o tempo de execução do sistema recipiente. Isso ocorre para manter os limites dos containers claros, facilitando testes e ligações entre as aplicações.
-- *Kube Proxy*: Solução para agrupamento de Pods com balanceamento de carga. Cada nó executa um kube-proxy que intercepta as chamadas de IP’s direcionando aos endereços corretos, equilibrando o tráfego entre clientes de um mesmo nó.
+- *Kubelet*:<p align="justify"> Kubelet obtém a configuração de um pod a partir do apiserver e garante que os containers estão em funcionamento. Este é o serviço do worker que é responsável pela comunicação com o nó master. Ele também se comunica com o etcd, para obter informações sobre serviços e escrever os detalhes sobre os recém-criados. Sendo assim , o kubelet é controlador da API dos pods e nós que controla toda a execução no container.</p>
+- *Container Runtime*: <p align="justify">Cada nó executa um tempo de execução de container, ou seja, o Kubelet desconhece o tempo de execução do sistema recipiente. Isso ocorre para manter os limites dos containers claros, facilitando testes e ligações entre as aplicações.</p>
+- *Kube Proxy*: <p align="justify">Solução para agrupamento de Pods com balanceamento de carga. Cada nó executa um kube-proxy que intercepta as chamadas de IP’s direcionando aos endereços corretos, equilibrando o tráfego entre clientes de um mesmo nó.</p>
 
 #### Visão de desenvolvimento
 
+<p align="justify">
 Segue abaixo a visão de desenvolvimento do Kubernetes com todos os seus pacotes principais. Devido ao grande número de subpacotes existentes no código, eles não foram mapeadas nesta representação. 
+</p>
 
 ![visao-desenvolvimento](
   https://raw.githubusercontent.com/licesoares/docArquitetura-Kubernetes/master/img/visao-desenvolvimento.PNG)
@@ -286,7 +291,9 @@ Segue abaixo a visão de desenvolvimento do Kubernetes com todos os seus pacotes
 
 #### Visão Física
 
+<p align="justify">
 Como já foi explicado anteriormente,a ferramenta possui alguns conceitos específicos e sua arquitetura é elaborada para ser altamente escalável. Kubernetes possui uma unidade de controle chamada master server que executa vários serviços de uso exclusivo para o funcionamento do cluster. Toda a comunicação e configuração do cluster é realizada por meio do ETCD um armazenamento de chave-valor que salva o estado do cluster e compartilha entre os nós por meio de sua API HTTP/JSON. Cada minion possui um Docker em execução, além disso uma sub-rede privada dedicada à comunicação. Por meio da sub-rede temos rotas de tráfego para garantir o acesso a internet em todos os minions. 
+</p>
 
 ![visao-fisica](
   https://raw.githubusercontent.com/licesoares/docArquitetura-Kubernetes/master/img/visao-fisica.PNG)
