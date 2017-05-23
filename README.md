@@ -137,60 +137,74 @@ Apesar do Kubernetes tratar-se de um sistema de código aberto, o desenvolviment
                    
 #### Evolução do sistema
 
+<p align="justify">
 Até hoje (21/05) foram lançadas mais de 240 releases, a última versão liberada foi a v1.6.4, no dia 19/05/2017. A versão v1.7 já está em modo alpha.4 de desenvolvimento. Para todas as versões existe a documentação de todas as modificações realizadas, bem como um link para o commit e revisão de código da correção/melhoria com uma descrição mais detalhada da alteração.
-
 Segue abaixo um pouco sobre a evolução do sistema com algumas das principais versões já disponibilizadas:
+</p>
 
 - v1.2.0 – Lançado em 12 de março de 2016
 
-Nesta versão foram implementadas melhorias significativas no sistema de escala, um aumento na escala de cluster em 400% representando 1000 nós com 30.000 pods por cluster. Além disso, a configuração passou a ser dinâmica, permitindo que a configuração dos aplicativos fosse armazenada como um objeto API Kubernetes e puxada dinamicamente na inicialização do container.
+<p align="justify">
+Nesta versão foram implementadas melhorias significativas no sistema de escala, um aumento na escala de cluster em 400% representando 1000 nós com 30.000 pods por cluster. Além disso, a configuração passou a ser dinâmica, permitindo que a configuração dos aplicativos fosse armazenada como um objeto API Kubernetes e puxada dinamicamente na inicialização do container.</p>
 
-A partir desta versão foi implementado também o Turnkey em modo Beta, que automatizou a implantação de atualizações do aplicativo, que agora são especificadas de forma declarativa. Esse app lida ainda com o controle de versão, permitindo vários lançamentos simultâneos, vinculando aos pods um status e mantendo a disponibilidade dos aplicativos.
+<p align="justify">
+A partir desta versão foi implementado também o Turnkey em modo Beta, que automatizou a implantação de atualizações do aplicativo, que agora são especificadas de forma declarativa. Esse app lida ainda com o controle de versão, permitindo vários lançamentos simultâneos, vinculando aos pods um status e mantendo a disponibilidade dos aplicativos.</p>
 
-Os clusters do Kubernetes passaram a poder ocupar zonas dentro de um provedor de nuvem, o que significou a simplificação na forma de executar um contêiner em cada nó. 
+<p align="justify">
+Os clusters do Kubernetes passaram a poder ocupar zonas dentro de um provedor de nuvem, o que significou a simplificação na forma de executar um contêiner em cada nó. </p>
 
-A partir desta versão o Kubernetes pôde agendar serviços com documentação por log através de apenas um pod por nó.
+<p align="justify">
+A partir desta versão o Kubernetes pôde agendar serviços com documentação por log através de apenas um pod por nó.</p>
 
-O Kubernetes ganhou também mais facilidade na integração em ambientes de rede personalizadas, suportando TLS para comunicação segura e roteamento de tráfego baseado em http.
+<p align="justify">
+O Kubernetes ganhou também mais facilidade na integração em ambientes de rede personalizadas, suportando TLS para comunicação segura e roteamento de tráfego baseado em http.</p>
 
-Um novo comando foi implementado para uma preparação de operaçoes como upgrades e ou manutenções do kernel, o comando “kubectl drain”.
+<p align="justify">
+Um novo comando foi implementado para uma preparação de operaçoes como upgrades e ou manutenções do kernel, o comando “kubectl drain”.</p>
 
-Foi implementada também uma interface mais amigável baseada em Material Design.
+<p align="justify">
+Foi implementada também uma interface mais amigável baseada em Material Design.</p>
 
 ![newgui](
   https://raw.githubusercontent.com/licesoares/docArquitetura-Kubernetes/master/img/newgui.png)
 
 - v1.3.0 – Lançado em 1 de julho de 2016
 
-Após diversas versões v1.2. e algumas versões alpha e beta da v1.3., a v1.3.0 foi lançada com alguns destaques.
+<p align="justify">
+Após diversas versões v1.2. e algumas versões alpha e beta da v1.3., a v1.3.0 foi lançada com alguns destaques. A partir desta versão o sistema ganhou autorização Alpha RBAC e todos os serviços de todos os clusters federados passaram a ser registrados na AWS e GCP. O Alpha PetSets passou a gerenciar aplicativos com status e a segurança foi reforçada. O Escalonador L7 LB e escalonadores de conexão de disco passaram a ser executados como master, evitando que nós precisem deste tipo de privilégio.</p>
 
-A partir desta versão o sistema ganhou autorização Alpha RBAC e todos os serviços de todos os clusters federados passaram a ser registrados na AWS e GCP. O Alpha PetSets passou a gerenciar aplicativos com status e a segurança foi reforçada. O Escalonador L7 LB e escalonadores de conexão de disco passaram a ser executados como master, evitando que nós precisem deste tipo de privilégio.
-
-O comando criado na versão anterior, “kubectl drain”, passou a poder apagar pods com armazenamento local. Uma exibição mais arrojada de erros foi implementada, em que o kubectl passou a exibir o número da linha em erro do JSON e a flag -t para indicar –type foi inserida.
-
+<p align="justify">
+O comando criado na versão anterior, “kubectl drain”, passou a poder apagar pods com armazenamento local. Uma exibição mais arrojada de erros foi implementada, em que o kubectl passou a exibir o número da linha em erro do JSON e a flag -t para indicar –type foi inserida.</p>
 
 - v1.4.0 – Lançado em 26 de setembro de 2016
 
-Nesta versão temas como UX foram abordados. A experiência do usuário passou a ser mais fácil, ficou mais simples obter um cluster e colocá-lo para rodar. Ficou mais fácil também entender um cluster, utilizando logs e padrões de API, e a capacidade de persistência do sistema foi aprimorada.
+<p align="justify">
+Nesta versão temas como UX foram abordados. A experiência do usuário passou a ser mais fácil, ficou mais simples obter um cluster e colocá-lo para rodar. Ficou mais fácil também entender um cluster, utilizando logs e padrões de API, e a capacidade de persistência do sistema foi aprimorada.</p>
 
-Recursos de planejamento para escalonamento foram criados e o sistema ingressou nos clusters GCE e GKE de nível global https, com isso o suporte foi expandido para recursos federados de nuvem híbrida.
+<p align="justify">
+Recursos de planejamento para escalonamento foram criados e o sistema ingressou nos clusters GCE e GKE de nível global https, com isso o suporte foi expandido para recursos federados de nuvem híbrida.</p>
 
-No âmbito da segurança, houve um aumento da granularidade no nível do pod com políticas de imagens de contêiner, suporte a sysctl e API de revisão de acesso.
-
+<p align="justify">
+No âmbito da segurança, houve um aumento da granularidade no nível do pod com políticas de imagens de contêiner, suporte a sysctl e API de revisão de acesso.</p>
 
 - v1.5.0 – Lançado em 12 de dezembro de 2016
 
-Dentre as atualizações mais significantes, esta versão trouxe novos comandos, suporte do Windows Server Container, implantação de cluster foi simplificada e o suporte a federação foi melhorado.
+<p align="justify">
+Dentre as atualizações mais significantes, esta versão trouxe novos comandos, suporte do Windows Server Container, implantação de cluster foi simplificada e o suporte a federação foi melhorado.</p>
 
 - v.1.6.0 – Lançado em 28 de março de 2017
 
-A partir desta versão, houve um crescimento ao suporte de nós para 5.000, utilizando etcd v3, que é habilitado por padrão. Uma versão beta da ferramenta bootstrap do cluster kubeandm também foi inserida e toda comunicação passou a ser sobre TLS.
+<p align="justify">
+A partir desta versão, houve um crescimento ao suporte de nós para 5.000, utilizando etcd v3, que é habilitado por padrão. Uma versão beta da ferramenta bootstrap do cluster kubeandm também foi inserida e toda comunicação passou a ser sobre TLS.</p>
 
-Um sistema de token de bootstrap passou a permitir gerenciamento de token e expiração. 
+<p align="justify">
+Um sistema de token de bootstrap passou a permitir gerenciamento de token e expiração. </p>
 
-A interação com tempos de execução de contêineres agora é através da interface CRI, permitindo uma integração mais fácil dos tempos de execução com o kubelet. 
+<p align="justify">
+A interação com tempos de execução de contêineres agora é através da interface CRI, permitindo uma integração mais fácil dos tempos de execução com o kubelet. </p>
 
-Novos recursos de programação entraram em modo beta, nesta versão é tornou-se possível usar vários agendadores e Nodes e Pods passaram a suportar afinidade e anti afinidade. Além disso, houve a implementação de um agendamento avançado para ser realizado com tolerâncias e a inserção de uma funcionalidade que permite que o usuário especifique por Pod por quanto tempo um Pod deve ficar vinculado a um nó quando existirem problemas à nível de nó.
+<p align="justify">
+Novos recursos de programação entraram em modo beta, nesta versão é tornou-se possível usar vários agendadores e Nodes e Pods passaram a suportar afinidade e anti afinidade. Além disso, houve a implementação de um agendamento avançado para ser realizado com tolerâncias e a inserção de uma funcionalidade que permite que o usuário especifique por Pod por quanto tempo um Pod deve ficar vinculado a um nó quando existirem problemas à nível de nó.</p>
 
 
 Referências utilizadas
@@ -198,11 +212,15 @@ Referências utilizadas
 
 #### Frameworks
 
-O Kubernetes possui uma API que visa facilitar a manipulação de objetos no sistema. Esses objetos são quaisquer unidades manipuláveis nos containers, como um nó, um Pod, um serviço, Namespace, etc. A API oferece uma linguagem declarativa e é extremamente poderosa, oferecendo abstração para o gerenciamento de domínios de objetos, controle de chamada e comportamento e concorrência de tarefa, além de validação das respostas recebidas nas chamadas feitas por objetos, classificando respostas com “Falha” ou “Inválida” em caso de erros. 
-Além dessa API, o Kubernetes conta com uma API Server, que tem o objetivo de servir a API, sendo um servidor relativamente simples, com módulos bem definidos processando principalmente as operações de REST, Representational State Transfer. Essas operações visam  ignorar de implementação dos objetos e focar nos papéis dos objetos, nas restrições sobre sua interação com outros componentes e na sua interpretação de elementos de dados significantes. A API Server também possui o objetivo de garantir a sincronização dos componentes, inicialização assíncrona de recursos, consistência entre os objetos e atuar como um gateway para o Cluster. A API Server deve ser acessível para clientes fora do Cluster, ao contrário dos nós e containers, dessa forma, passando pela autenticação da API Server esses clientes podem acessar os nós e containers que não eram acessíveis.
+<p align="justify">
+O Kubernetes possui uma API que visa facilitar a manipulação de objetos no sistema. Esses objetos são quaisquer unidades manipuláveis nos containers, como um nó, um Pod, um serviço, Namespace, etc. A API oferece uma linguagem declarativa e é extremamente poderosa, oferecendo abstração para o gerenciamento de domínios de objetos, controle de chamada e comportamento e concorrência de tarefa, além de validação das respostas recebidas nas chamadas feitas por objetos, classificando respostas com “Falha” ou “Inválida” em caso de erros. </p><p align="justify">
+Além dessa API, o Kubernetes conta com uma API Server, que tem o objetivo de servir a API, sendo um servidor relativamente simples, com módulos bem definidos processando principalmente as operações de REST, Representational State Transfer. Essas operações visam  ignorar de implementação dos objetos e focar nos papéis dos objetos, nas restrições sobre sua interação com outros componentes e na sua interpretação de elementos de dados significantes. A API Server também possui o objetivo de garantir a sincronização dos componentes, inicialização assíncrona de recursos, consistência entre os objetos e atuar como um gateway para o Cluster. A API Server deve ser acessível para clientes fora do Cluster, ao contrário dos nós e containers, dessa forma, passando pela autenticação da API Server esses clientes podem acessar os nós e containers que não eram acessíveis.</p>
 
 #### Ferramentas
-O Kubernetes utiliza/pode utilizar diversas ferramentas para facilitar a utilização, manutenção e build do sistema. Abaixo seguem algumas indicadas pelo software: 
+
+<p align="justify">
+O Kubernetes utiliza/pode utilizar diversas ferramentas para facilitar a utilização, manutenção e build do sistema. Abaixo seguem algumas indicadas pelo software: </p>
+
 - *Godep*: Plataforma para estruturar o build fixando as dependências necessárias na compilação.
 - *Aqua*: Ferramenta que auxilia na garantia da segurança dos containers no Kubernetes. Por meio dessa ferramenta é possível configurar facilmente segurança das imagens criadas, bem como quais e o número de usuários que podem acessar a imagem simultaneamente. Além disso, a ferramenta permite uma segmentação de rede que ‘particiona’ a segurança de diferentes aplicações em um mesmo cluster do Kubernetes, ou seja, caso várias aplicações rodem em um mesmo cluster e uma delas sofra um ataque, essa ferramenta impede que as aplicações vizinhas sejam infectadas.
 - *Bitnami*: Ferramenta para auxiliar na compilação de blocos de um container, facilitando o building de blocos (aplicações) de um container e oferecendo modos de visualização gráfica de dados dos builds realizados.
@@ -211,8 +229,9 @@ O Kubernetes utiliza/pode utilizar diversas ferramentas para facilitar a utiliza
 - *Crunchy PostgreSQL Container Suite*: Conjunto de ferramentas para auxiliar na manutenção dos microserviços do PostgresSQL nos containers do Kubernets.
 - *DataDog*: Ferramenta de monitoramento de serviços de infraestrutura, possibilitando alertas e análises de utilização de recursos.
 
+<p align="justify">
 Outras diversas ferramentas podem ser utilizadas, ligadas principalmente à gerenciamento de recursos, rede, build e segurança e estão disponíveis na página https://kubernetes.io/partners/. 
-
+</p>
 
 Arquitetura
 --------------------
