@@ -276,21 +276,21 @@ Segue abaixo a visão de desenvolvimento do Kubernetes com todos os seus pacotes
   https://raw.githubusercontent.com/licesoares/docArquitetura-Kubernetes/master/img/visao-desenvolvimento.PNG)
   
 - *API*: Pacote que contém o código da representação dos objetos Kubernetes em memória.
-- *Capabilities*: Código de gerenciamento de recursos à nível de sistema.
-- *CloudProvider*: Fornece interfaces e implementações para provedores de serviços na nuvem.
-- *Controller*: Código de controladores do sistema.
+- *Capabilities*: <p align="justify">Código de gerenciamento de recursos à nível de sistema, este pacote provê diversas formas de configurações de privilégios, de forma que o usuário possa optar sob o nível/tipo de gerenciamento de recursos desejado no container.</p>
+- *CloudProvider*: Fornece interfaces e implementações para provedores de serviços na nuvem, como balanceamento de carga, rotas e gerenciamento de hosts.
+- *Controller*: <p align="justify">Código de controladores do sistema. No Kubernetes, um controlador é um loop de controle que observa o estado compartilhado do cluster através da APIServer e faz alterações tentando mover o estado atual para o estado desejado. Exemplos de controladores que acompanham Kubernetes hoje são o controlador de replicação, controlador de pontos de extremidade, controlador de namespace e controlador de contas de serviço.</p>
 - *CredentialProvider*: Provê interfaces e implementações para esquema de autenticação de softwares de terceiros em um container.
-- *FiedPath*: Fornece métodos para extrair atributos/campos de objetos dado um determinado caminho.
+- *FieldPath*: Fornece métodos para extrair atributos/campos de objetos dado um determinado caminho.
 - *Generated*: Pacote para armazenamento de arquivos gerados automaticamente durante o build completo do sistema.
-- *KubeApiServer*: Pacote que armazena código comum da API Server, que não deve ser utilizado como código genérico da API.
+- *KubeApiServer*: <p align="justify">Pacote que armazena código comum da API Server, que não deve ser utilizado como código genérico da API. O módulo possui operações de validação e configuração de dados para os objetos api que incluem Pods, Services, ReplicationControllers e outros. Além disso, nessa parte do código ficam localizadas a implementação das operações de REST e o frontend do estado compartilhado do cluster através do qual todos os outros componentes interagem.</p>
 - *KubeCtl*: Bibliotecas usadas para manipulação de ferramentas na linha de comando kubeclt.
-- *KubeLet*: Contém código responsável pelo gerenciamento de Pod à nível de Nó, que é executado em cada Nó de trabalho.
+- *KubeLet*: <p align="justify">Contém código responsável pelo gerenciamento de Pod à nível de Nó, que é executado em cada Nó de trabalho. O Kubelet é o principal "agente de nó" que é executado em cada nó. O kubelet funciona em termos de um PodSpec, que é um objeto YAML ou JSON que descreve um Pod. O kubelet tem um conjunto de PodSpecs que são fornecidos através de vários mecanismos (principalmente através da APIServer) e garante que os recipientes descritos nesses PodSpecs estão em execução e sem problemas com recursos. A implementação do kubelet não contempla o gerenciamento de contêineres que não foram criados pela Kubernetes.</p>
 - *Master*: Este pacote é responsável por todo o código de configuração de execução do Nó Master, explicado na seção 3.1.
 - *Probe*: Código de utilitários para verificação da utilização de recursos das aplicações no Nó.
 - *Proxy*: Implementação do proxy de rede para comunicação transparente dos containers.
 - *Registry*: Implementação do armazenamento e lógica do sistema da API Server.
 - *Routes*: Pacote com uma coleção de rotas de tramitação http de pacotes.
-- *Security*: Implementação de requisitos de segurança da api.
+- *Security*: Implementação de requisitos de segurança da API.
 - *Util*: Implementação de métodos úteis que podem ser usados em qualquer outro pacote, este pacote, no entanto, não depende de nenhum pacote.
 - *Version*: Pacote que contém informações da versão a ser gerada, informações gerais da última configuração de build para geração de nova versão.
 - *Volume*: Armazena todo código referente a Volumes no Kubernetes, incluindo representações internas e código de montagem e desmontagem de volumes.
