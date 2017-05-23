@@ -106,15 +106,31 @@ Segue abaixo um pouco sobre a evolução do sistema com algumas das principais v
 
 - v1.2.0 – Lançado em 12 de março de 2016
 
-Foram inseridas diversas melhorias no sistema desde a versão V1.1.1. Um suporte ao Ubuntu foi adicionado e algumas características experimentais foram implantadas. As mudanças mais significativas estão no aumento da escala de cluster, que reduziram a sobrecarga do sistema em 4 vezes, e a implantação do turnkey, API para automatizar a atualização permitindo lançamentos simultâneos e visualização de status. Além disso, o gerenciamento de clusters também foi automatizado.
+Nesta versão foram implementadas melhorias significativas no sistema de escala. Um aumento na escala de cluster em 400%, 1000 nós com 30.000 pods por cluster.
+A configuração passou a ser dinâmica, permitindo que a configuração dos aplicativos fossem armazenadas como um objeto API Kubernetes e puxadas dinamicamente na inicialização do contêiner.
+A partir desta versão foi implementado também o Turnkey em modo Beta, que automatizou a implantação de atualizações do aplicativo que são especificadas de forma declarativa. Esse app lida com o controle de versão, permitindo vários lançamentos simultâneos, vinculando aos pods um status e mantendo a disponibilidade dos aplicativos.
+Os clusters do Kubernetes passaram a poder ocupar zonas dentro de um provedor de nuvem.
+A forma de executar um contêiner em cada nó foi simplificada. A partir desta versão o Kubernetes pôde agendar serviços utilizando junto um log através de apenas um pod por nó.
+O Kubernetes ganhou também mais facilidade na integração em ambientes de rede personalizadas, suportando TLS para comunicação segura e roteamento de tráfgo baseado em http.
+Um novo comando foi implementado para uma preparação de operaçoes como upgrades e ou manutenções do kernel. O comando “kubectl drain”.
+Foi implementada também uma interface mais amigável baseadas em Material Design.
 
 - v1.3.0 – Lançado em 1 de julho de 2016
 
-A versão V1.3.0 foi lançada como V1.3.0-alpha.1 até V1.3.0-alpha.5, em seguida V1.3.0-beta.1 até V1.3.0-beta.3, todas com atualizações de funcionalidades e correções de erros. Dentre as implantações nesta versão estão os registros dos clusters federados em nuvem AWS e GCP e atualizações de segurança e autenticação.
+Após diversas versões v1.2. e algumas versões alpha e beta da v1.3., a v1.3.0 foi lançada com alguns destaques.
+A partir desta versão o sistema ganhou autorização Alpha RBAC e todos os serviços de todos os clusters federados passaram a ser registrados na AWS e GCP. O Alpha PetSets passou a gerenciar aplicativos com status.
+A segurança também foi reforçada. Escalonador L7 LB e escalonadores de conexão de disco passaram a ser executados como master, evitando que nós precisem deste tipo de privilégio.
+O comando criado na versão anterior, “kubectl drain”, passou a poder apagar pods com armazenamento local também. Uma exibição mais arrojada de erros foi implementada. O kubectl passou a exibir o número da linha em erro do JSON. A flag -t para indicar –type foi inserida.
+
 
 - v1.4.0 – Lançado em 26 de setembro de 2016
 
-Com esta versão houveram melhorias na experiência do usuário que simplificaram como obter e entender um cluster. Foi implantado suporte a aplicações e os recursos de persistência foram aprimorados. Em Federação de cluster aconteceu a entrada global multi-cluster htttp através do GCE e GKE Clusters. A segurança foi aumentada com api de revisão de acesso e políticas de imagem de container.
+Nesta versão temas como UX foram abordados. A experiência do usuário passou a ser mais fácil. Ficou mais simples obter um cluster e colocá-lo para rodar. Ficou mais fácil também entender um cluster, utilizando logs e padrões de API.
+A capacidade de persistência do sistema foi aprimorada.
+Recursos de planejamento para escalonamento foram criados.
+O sistema ingressou nos clusters GCE e GKE de nível global https. Com isso o suporte foi expandido para recursos federados de nuvem híbrida.
+No âmbito da segurança, houve um aumento da granularidade no nível do pod com políticas de imagens de contêiner, suporte a sysctl e API de revisão de acesso.
+
 
 - v1.5.0 – Lançado em 12 de dezembro de 2016
 
@@ -122,7 +138,16 @@ Dentre as atualizações mais significantes, esta versão trouxe novos comandos,
 
 - v.1.6.0 – Lançado em 28 de março de 2017
 
-Kubernetes agora suporta até 5.000 nós via etcd v3, que é habilitado por padrão. O controle de acesso baseado em funções (rbac) foi graduado para beta e define funções de padrão seguro para o plano de controle, o nó e os componentes do controlador. A ferramenta bootstrap do cluster kubeadm se graduou para beta. Esta versão foi lançada com um problema que faz com o que a aplicação pare que foi corrigida na versão v.1.6.1. Toda a comunicação está agora sobre tls. Plugins de autorização podem ser instalados pelo kubeadm, incluindo o novo padrão de rbac. O sistema de token bootstrap agora permite gerenciamento de token e expiração. A interação com os tempos de execução do recipiente é agora através da interface cri, permitindo uma integração mais fácil dos tempos de execução com o kubelet. Docker permanece o tempo de execução padrão via docker-cri. Tornou-se possível utilizar vários escalonadores e os recursos de armazenamento foram atualizados.
+A partir desta versão, houve um crescimento ao suporte de nós para 5.000 utilizando etcd v3 que é habilitado por padrão.
+Uma versão beta da ferramenta bootstrap do cluster kubeandm foi inserida.
+Toda comunicação passou a ser sobre TLS.
+Um sistema de token de bootstrap passou a permitir gerenciamento de token e expiração.
+A interação com tempos de execução de contêineres agora é através da interface CRI, permitindo uma integração mais fácil dos tempos de execução com o kubelet. Docker permanece o tempo de execução padrão via Docker-CRI.
+Novos recursos de programação entraram em modo beta.
+Nesta versão é tornou-se possível usar vários agendadores. 
+Nodes e pods passaram a suportar afinidade e anti afinidade.
+A implementação de um agendamento avançado para ser realizado com tolerâncias.
+Uma funcionalidade que permite que o usuário especifique por pod por quanto tempo um pode deve ficar vinculado a um nó quando existirem problemas de nó.
 
 
 Referências utilizadas
